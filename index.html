@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <base target="_blank"/>
+    <title>Anthony | Home</title>
+    <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@900&display=swap');
+        body{
+            font-family: 'Open Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        header,nav{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 0px 0px 10px;
+        }
+        nav{
+            background-color: rgb(230, 227, 227);
+            height: 80px;
+            border-radius: 0px 0px 2px 2px;
+            box-shadow: 0 2px 2px rgb(156, 156, 156);
+        }
+        header > span{
+            font-size: 12px;
+        }
+        header ul, nav ul.nav-links{
+            display: flex;
+        }
+        ul.social-links, ul.nav-links, ul.contact-links{
+            list-style-type: none;
+        }
+        ul.social-links i, ul.nav-links li{
+            font-size: 20px;
+           padding: 0px 20px 0px 0px;
+        }
+        header i{
+            color: rgb(11,11,69);
+            text-decoration: none;
+        }
+        ul.nav-links a{
+            color: rgb(6, 6, 56);
+        }
+        ul.nav-links a:hover{
+            color: rgb(241, 162, 14);
+        }
+        button{
+            cursor: pointer;
+        }
+        .a{
+            text-decoration: none;
+        }
+        nav > span{
+            font-size: 28px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bolder;
+            letter-spacing: 2px;
+            color: rgb(7, 7, 154);
+        }
+        li.contacts ul.contact-links{
+            display: none;
+        }
+        li.contacts ul.contact-links > li{
+            padding: 10px;
+            background-color: rgb(252, 251, 251);
+            border-bottom: 1px solid rgb(218, 214, 214);
+        }
+        li.contacts ul.contact-links li:last-child{
+            border-bottom: none;
+        }
+        li.contacts ul.contact-links > li:first-child{
+            border-top: 1px solid rgb(218, 214, 214);
+        }
+        .hamburger{
+            padding-right: 10px;
+            display: none;
+        }
+        .hamburger button{
+            background-color: transparent;
+            border: none;
+            font-size: 28px;
+        }
+        .nav-active{
+            left: 0%;
+        }
+        @media screen and (max-width: 1000px) {
+            header{
+                display: none;
+            }
+            ul.social-links{
+                padding: 0;
+                width: 100%;
+            }
+            nav > ul{
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                position: fixed;
+                overflow: auto;
+                top: 80px;
+                left: -100%;
+                transition: left 0.5s;
+                padding: 0px;
+                margin: 0;
+            }
+            nav ul.nav-links > li{
+                padding: 20px!important;
+                border-bottom: 1.5px solid rgb(235, 229, 229);
+                width: 100%;
+            }
+            .nav-bar ul.nav-links li.contacts:hover > ul.contact-links{
+                display: initial;
+            }
+            
+            .hamburger{
+                display: initial;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="header"></div>
+
+    <script type="text/babel">
+      function Support() {
+
+        const styleDisplay = {
+            display: "flex"
+        };
+        return(
+            <>
+            <div>
+                <ul className="social-links" style={styleDisplay}>
+                    <li>
+                        <a className="a" title="facebook" href="https://www.facebook.com/anthony.omukuyia.9/"><i class="fa-brands fa-square-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a className="a" title="linkedin" href="#"><i className="fa-brands fa-linkedin"></i></a>
+                    </li>
+                    <li>
+                        <a className="a" title="twitter" href="#"><i className="fa-brands fa-square-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a className="a" title="Click to call" href="tel:+254700536326"><i className="fa-solid fa-phone-volume"></i></a>
+                    </li>
+                </ul>
+            </div>
+            </>
+        );
+      }
+      
+      ReactDOM.render(<Support />, document.getElementById('header-social-links'));
+      ReactDOM.render(<Support />, document.getElementById('more-contacts'));
+    </script>
+
+
+    <header class="header">
+        <span>Welcome to my website</span>
+        <ul class="social-links" id="header-social-links"></ul>
+    </header>
+    <script>
+        function showNav(){
+            var nav = document.getElementById("nav-links");
+            nav.classList.toggle("nav-active");
+        }
+        
+    </script>
+    <nav class="nav-bar">
+        <span> <a class="a logo" href="index.html">TONY</a> </span>
+        <ul class="nav-links" id="nav-links">
+            <li> <a class="a" href="#">Home</a> </li>
+            <li> <a class="a" href="#">About</a> </li>
+            <li> <a class="a" href="#">Gallery</a> </li>
+            <li> <a class="a" href="#">Projects</a> </li>
+            <li class="contacts" id="contacts-nav"></li>
+            <script type="text/babel">
+                function Contacts(){
+                    var browserWidth = window.innerWidth;
+                    return(
+                        <>
+                            <a class="a">Contacts</a>
+                            <ul class="contact-links">
+                                <li> <a className="a" href="#">Work</a> </li>
+                                <li> <a className="a" href="#">Office</a> </li>
+                                <li> <a className="a" href="#">Location</a> </li>
+                                <li> <a className="a" href="#">Send Mail</a> </li>
+                                <li className="social" id="more-contacts"> </li>
+                            </ul>
+                        </>
+                    );
+                }
+                ReactDOM.render(<Contacts />, document.getElementById('contacts-nav'));
+            </script>
+        </ul>
+        <div class="hamburger">
+            <button class="btn-transparent button" onclick="showNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+</body>
+</html>
