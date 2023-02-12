@@ -24,7 +24,6 @@
             align-items: center;
             display: flex;
             justify-content: space-between;
-            padding: 0px 0px 0px 10px;
         }
         nav{
             background-color: rgb(230, 227, 227);
@@ -35,6 +34,7 @@
         }
         header > span{
             font-size: 12px;
+            padding-left: 10px;
         }
         header ul, nav ul.nav-links{
             display: flex;
@@ -63,6 +63,7 @@
             text-decoration: none;
         }
         nav > span{
+            padding-left: 10px;
             font-size: 28px;
             font-family: 'Orbitron', sans-serif;
             font-weight: bolder;
@@ -104,20 +105,19 @@
                 width: 100%;
             }
             nav > ul{
-                width: 90%;
-                height: 100%;
+                width: 100%;
+                height: auto;
                 flex-direction: column;
                 position: absolute;
                 top: 80px;
                 left: -100%;
                 transition: left 0.5s;
-                padding: 0px;
+                padding: 0;
                 margin: 0;
             }
             nav ul.nav-links > li{
-                padding: 20px!important;
+                padding: 20px 5px!important;
                 border-bottom: 1.5px solid rgb(235, 229, 229);
-                width: 100%;
             }
             .nav-bar ul.nav-links li.contacts:hover > ul.contact-links{
                 display: initial;
@@ -131,7 +131,6 @@
     
 </head>
 <body>
-    <div id="header"></div>
 
     <script type="text/babel">
       function Support() {
