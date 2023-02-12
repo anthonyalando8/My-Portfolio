@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa">
     <link rel="shortcut icon" href="favicon.ico"/>
-    <base target="_blank"/>
     <title>Anthony | Home</title>
     <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
 
@@ -29,7 +28,7 @@
         }
         nav{
             background-color: rgb(230, 227, 227);
-            overflow: auto;
+            overflow-x: auto;
             height: 80px;
             border-radius: 0px 0px 2px 2px;
             box-shadow: 0 2px 2px rgb(156, 156, 156);
@@ -96,7 +95,7 @@
         .nav-active{
             left: 0%;
         }
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: 650px) {
             header{
                 display: none;
             }
@@ -105,10 +104,10 @@
                 width: 100%;
             }
             nav > ul{
-                width: 100%;
+                width: 90%;
                 height: 100%;
                 flex-direction: column;
-                position: fixed;
+                position: absolute;
                 top: 80px;
                 left: -100%;
                 transition: left 0.5s;
@@ -163,7 +162,24 @@
       }
       
       ReactDOM.render(<Support />, document.getElementById('header-social-links'));
-      ReactDOM.render(<Support />, document.getElementById('more-contacts'));
+
+      function Contacts(){
+        return(
+            <>
+                <a class="a">Contacts</a>
+                <ul class="contact-links">
+                    <li> <a className="a" href="#">Work</a> </li>
+                    <li> <a className="a" href="#">Office</a> </li>
+                    <li> <a className="a" href="#">Location</a> </li>
+                    <li> <a className="a" href="#">Send Mail</a> </li>
+                    <li className="social" id="more-contacts"> </li>
+                </ul>
+            </>
+        );
+        }
+    ReactDOM.render(<Contacts />, document.getElementById('contacts-nav'));
+
+    ReactDOM.render(<Support />, document.getElementById('more-contacts'));
     </script>
 
 
@@ -186,24 +202,6 @@
             <li> <a class="a" href="#">Gallery</a> </li>
             <li> <a class="a" href="#">Projects</a> </li>
             <li class="contacts" id="contacts-nav"></li>
-            <script type="text/babel">
-                function Contacts(){
-                    var browserWidth = window.innerWidth;
-                    return(
-                        <>
-                            <a class="a">Contacts</a>
-                            <ul class="contact-links">
-                                <li> <a className="a" href="#">Work</a> </li>
-                                <li> <a className="a" href="#">Office</a> </li>
-                                <li> <a className="a" href="#">Location</a> </li>
-                                <li> <a className="a" href="#">Send Mail</a> </li>
-                                <li className="social" id="more-contacts"> </li>
-                            </ul>
-                        </>
-                    );
-                }
-                ReactDOM.render(<Contacts />, document.getElementById('contacts-nav'));
-            </script>
         </ul>
         <div class="hamburger">
             <button class="btn-transparent button" onclick="showNav()">
