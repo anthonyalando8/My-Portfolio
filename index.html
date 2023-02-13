@@ -381,12 +381,12 @@
     </nav>
     <script>
         function addStickyClass(){
-            var navbar = document.getElementById("body");
+            var navbar = document.getElementById("nav");
             var sticky = navbar.offsetTop;
             if (window.pageYOffset > sticky) {
-                navbar.classList.add("nav");
+                navbar.classList.add("sticky");
             } else {
-                navbar.classList.remove("nav");
+                navbar.classList.remove("sticky");
             }
         }
         addStickyClass();
