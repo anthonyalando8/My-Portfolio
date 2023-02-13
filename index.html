@@ -27,7 +27,7 @@
         }
         nav{
             background-color: rgb(230, 227, 227);
-            overflow-x: auto;
+            overflow: auto;
             height: 80px;
             border-radius: 0px 0px 2px 2px;
             box-shadow: 0 2px 2px rgb(156, 156, 156);
@@ -72,6 +72,7 @@
         }
         li.contacts ul.contact-links{
             display: none;
+            overflow: auto;
         }
         li.contacts ul.contact-links > li{
             padding: 10px;
@@ -96,6 +97,125 @@
         .nav-active{
             left: 0%;
         }
+        .container{
+            display: flex;
+            width: 100%;
+        }
+        .container::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .float{
+            float: left;
+        }
+        .hero{
+            height: 600px;
+            background-image: url(https://ik.imagekit.io/anthonyalando/My_Portfolio/glassy.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279827254);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .hero-content{
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            background-image: url(https://ik.imagekit.io/anthonyalando/My_Portfolio/glassy.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279827254);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 10px;
+            border-radius: 150px;
+            box-shadow: 0px 5px 5px rgb(3, 224, 254);
+        }
+        #hero-image{
+            height: 80%;
+            text-align: center;
+            width: 40%;
+        }
+        #hero-image img{
+            border-radius: 50%;
+            padding-top: 50px;
+            height: 100%;
+            box-shadow: 0px 10px 10px rgb(251, 252, 252);
+        }
+        #content-btn{
+            width: 60%;
+            padding-top: 100px;
+            padding-left: 100px;
+        }
+        #content-btn > section{
+            font-size: 18px;
+        }
+        #content-btn .frames{
+            text-transform: capitalize;
+            text-align: left;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        #content-btn > section > span >span{
+            color: rgb(10, 11, 69);
+            opacity: 0;
+            animation: blurInOut 3.0s  3s infinite linear;
+        }
+        @keyframes blurInOut{
+            0%{
+                opacity: 0;
+                transform: scale(1.5);
+            }
+            25%{
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+            50%{
+                opacity: 1.0;
+                transform: scale(1.0);
+            }
+            75%{
+                opacity: 0.5;
+            }
+            95%{
+                opacity: 0;
+            }
+        }
+
+        .btn{
+            padding: 10px;
+            width: 250px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .hero-btns{
+            word-spacing: 20px;
+            margin-top: 20px;
+        }
+        .btn-transparent{
+            background-color: transparent;
+            border: 1px solid white;
+        }
+        .btn-colored{
+            background-color: rgb(241, 162, 14);
+            color: white;
+        }
+        .stop-scrolling{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0%;
+            z-index: 7;
+            width: 100%;
+            transition: background-color 2s;
+            background-color: whitesmoke;
+            box-shadow: 0 10px 10px rgb(94, 72, 72);
+            animation: height 1s 1 linear;
+            overflow: hidden;
+        }
         @media screen and (max-width: 650px) {
             header{
                 display: none;
@@ -105,8 +225,10 @@
                 width: 100%;
             }
             nav > ul{
+                z-index: 1;
                 width: 100%;
-                height: auto;
+                height: 100%;
+                background-color: white;
                 flex-direction: column;
                 position: absolute;
                 top: 80px;
@@ -114,6 +236,9 @@
                 transition: left 0.5s;
                 padding: 0;
                 margin: 0;
+            }
+            nav ul, .contacts{
+                overflow: auto;
             }
             nav ul.nav-links > li{
                 padding: 20px 5px!important;
@@ -126,11 +251,55 @@
             .hamburger{
                 display: initial;
             }
+            .display-flex{
+                display: inline-block;
+            }
+            .hero{
+                height: auto;
+            }
+            .hero-content{
+                width: 90%;
+                margin:10px 2.5%;
+                height: auto;
+                border-radius: 50px;
+            }
+            #hero-image{
+                height: 300px;
+                text-align: center;
+                padding-top: 10px;
+                width: 100%;
+            }
+            #hero-image img{
+                border-radius: 50%;
+                padding-top: 0;
+                height: 100%;
+            }
+            #content-btn{
+                width: 100%;
+                padding-top: 10px;
+                text-align: center;
+                padding-left: 0px;
+            }   
+            #content-btn .frames{
+                font-size: 36px;
+             }
+             .hero-btns{
+                line-height: 3.0;
+                margin-top: 20px;
+                width: 90%;
+                margin: auto;
+            }
+             .btn{
+                padding: 10px;
+                width: 100%;
+                margin: auto;
+                font-size: 18px;
+            }
         }
     </style>
     
 </head>
-<body>
+<body id="body">
 
     <script type="text/babel">
       function Support() {
@@ -190,6 +359,7 @@
         function showNav(){
             var nav = document.getElementById("nav-links");
             nav.classList.toggle("nav-active");
+            document.getElementById('body').classList.toggle("stop-scrolling");
         }
         
     </script>
@@ -208,5 +378,54 @@
             </button>
         </div>
     </nav>
+    <script>
+        function addStickyClass(){
+            var navbar = document.getElementById("body");
+            var sticky = navbar.offsetTop;
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        addStickyClass();
+    </script>
+    <div class="hero">
+        <div class="hero-content container display-flex">
+            <div id="content-btn" class="float">
+                <section>Hello, welcome user! My name is <b> Omukuyia Anthony </b><br />
+                    <h1>Building digital products,<br /> brands and <span style="color: rgb(157, 0, 255);">experience.</span> </h1>
+                     <span class="frames">I DO  
+                        <span id="frames"></span>
+                        <script>
+                            const occ = ["WEB DESIGN","WEB BACKEND","ANDROID","NETWORKING", "REPAIRS", "FREELANCING"];
+                            var occ_id = document.getElementById("frames");
+                            var i = 0;
+                            function changeContent() {         
+                            setTimeout(function() { 
+                                occ_id.innerHTML = occ[i];                    
+                                i++;                    
+                                if (i < occ.length) {           
+                                    changeContent();             
+                                }
+                                else{
+                                    i = 0;
+                                    changeContent();
+                                }
+                                }, 3000)
+                                
+                            }
+                            changeContent();
+                        </script>
+                    </span>
+                </section>
+                <section class="hero-btns">
+                    <button class="btn-transparent btn">Hire Me</button>
+                    <button class="btn-colored btn">Call Me</button>
+                </section>   
+            </div>
+            <div id="hero-image" class="float"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279754293" alt="Anthony"></div>
+        </div>
+    </div>
 </body>
 </html>
