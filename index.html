@@ -282,6 +282,7 @@
             }   
             #content-btn .frames{
                 font-size: 36px;
+                height: 200px;
              }
              .hero-btns{
                 line-height: 3.0;
@@ -363,7 +364,7 @@
         }
         
     </script>
-    <nav class="nav-bar">
+    <nav class="nav-bar" id="nav">
         <span> <a class="a logo" href="index.html">TONY</a> </span>
         <ul class="nav-links" id="nav-links">
             <li> <a class="a" href="#">Home</a> </li>
@@ -383,9 +384,9 @@
             var navbar = document.getElementById("body");
             var sticky = navbar.offsetTop;
             if (window.pageYOffset > sticky) {
-                navbar.classList.add("sticky");
+                navbar.classList.add("nav");
             } else {
-                navbar.classList.remove("sticky");
+                navbar.classList.remove("nav");
             }
         }
         addStickyClass();
@@ -394,7 +395,7 @@
         <div class="hero-content container display-flex">
             <div id="content-btn" class="float">
                 <section>Hello, welcome user! My name is <b> Omukuyia Anthony </b><br />
-                    <h1>Building digital products,<br /> brands and <span style="color: rgb(157, 0, 255);">experience.</span> </h1>
+                    <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255);">experience.</span> </h1>
                      <span class="frames">I DO  
                         <span id="frames"></span>
                         <script>
