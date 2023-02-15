@@ -28,6 +28,7 @@
         nav{
             background-color: rgb(230, 227, 227);
             overflow: auto;
+            width: 100%;
             height: 80px;
             border-radius: 0px 0px 2px 2px;
             box-shadow: 0 2px 2px rgb(156, 156, 156);
@@ -110,50 +111,44 @@
             float: left;
         }
         .hero{
-            height: 600px;
             background-image: url(https://ik.imagekit.io/anthonyalando/My_Portfolio/glassy.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279827254);
-            background-position: center;
             background-repeat: no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
+            border: 1px solid white;
         }
         .hero-content{
             width: 80%;
             height: 80%;
-            margin: auto;
-            background-image: url(https://ik.imagekit.io/anthonyalando/My_Portfolio/glassy.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279827254);
-            background-repeat: no-repeat;
-            background-size: cover;
-            padding: 10px;
+            margin: 60px auto;
+            background-color: white;
             border-radius: 150px;
             box-shadow: 0px 5px 5px rgb(3, 224, 254);
         }
         #hero-image{
-            height: 80%;
+            height: 450px;
             text-align: center;
             width: 40%;
         }
         #hero-image img{
             border-radius: 50%;
-            padding-top: 50px;
             height: 100%;
-            box-shadow: 0px 10px 10px rgb(251, 252, 252);
+            box-shadow: 0px 5px 5px rgb(251, 252, 252);
         }
         #content-btn{
             width: 60%;
             padding-top: 100px;
-            padding-left: 100px;
+            padding-left: 50px;
         }
-        #content-btn > section{
+        #content-btn > div{
             font-size: 18px;
         }
         #content-btn .frames{
             text-transform: capitalize;
-            text-align: left;
-            font-size: 48px;
+            font-size: 40px;
             font-weight: bold;
             letter-spacing: 1px;
         }
-        #content-btn > section > span >span{
+        #content-btn > div > h1.frames >span{
             color: rgb(10, 11, 69);
             opacity: 0;
             animation: blurInOut 3.0s  3s infinite linear;
@@ -185,28 +180,39 @@
             font-size: 18px;
             border-radius: 5px;
             border: none;
-            font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
         .hero-btns{
-            word-spacing: 20px;
+           justify-content: space-between;
+           align-items: center;
             margin-top: 20px;
         }
         .btn-transparent{
             background-color: transparent;
-            border: 1px solid white;
+            border: 1px solid rgb(218, 207, 207);
         }
         .btn-colored{
             background-color: rgb(241, 162, 14);
             color: white;
         }
+
+
+        .about{
+            background-color: #212436;
+            color: whitesmoke;
+        }
+        .about .head{
+            text-align: center;
+        }
+
+
         .stop-scrolling{
             height: 100%;
             overflow: hidden;
         }
 
         .sticky{
-            position: fixed;
+            position: fixed!important;
             top: 0%;
             z-index: 7;
             width: 100%;
@@ -216,7 +222,7 @@
             animation: height 1s 1 linear;
             overflow: hidden;
         }
-        @media screen and (max-width: 650px) {
+        @media screen and (max-width: 800px) {
             header{
                 display: none;
             }
@@ -252,49 +258,34 @@
                 display: initial;
             }
             .display-flex{
-                display: inline-block;
+                display: inline-block!important;
             }
             .hero{
                 height: auto;
             }
             .hero-content{
-                width: 90%;
-                margin:10px 2.5%;
+                width: 95%;
                 height: auto;
+                margin: 10px 2.5%;
                 border-radius: 50px;
             }
             #hero-image{
                 height: 300px;
-                text-align: center;
-                padding-top: 10px;
                 width: 100%;
-            }
-            #hero-image img{
-                border-radius: 50%;
-                padding-top: 0;
-                height: 100%;
             }
             #content-btn{
                 width: 100%;
                 padding-top: 10px;
-                text-align: center;
                 padding-left: 0px;
+                text-align: center;
             }   
-            #content-btn .frames{
-                font-size: 36px;
-                height: 200px;
-             }
              .hero-btns{
-                line-height: 3.0;
-                margin-top: 20px;
                 width: 90%;
                 margin: auto;
             }
              .btn{
-                padding: 10px;
                 width: 100%;
-                margin: auto;
-                font-size: 18px;
+                margin-top: 10px;
             }
         }
     </style>
@@ -313,7 +304,7 @@
             <div>
                 <ul className="social-links" style={styleDisplay}>
                     <li>
-                        <a className="a" title="facebook" href="https://www.facebook.com/anthony.omukuyia.9/"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a className="a" title="facebook" href="https://www.facebook.com/anthony.omukuyia.9/"><i className="fa-brands fa-square-facebook"></i></a>
                     </li>
                     <li>
                         <a className="a" title="linkedin" href="#"><i className="fa-brands fa-linkedin"></i></a>
@@ -361,11 +352,10 @@
             var nav = document.getElementById("nav-links");
             nav.classList.toggle("nav-active");
             document.getElementById('body').classList.toggle("stop-scrolling");
-        }
-        
+        } 
     </script>
     <nav class="nav-bar" id="nav">
-        <span> <a class="a logo" href="index.html">TONY</a> </span>
+        <span> <a class="a logo" href="index.html">OA<sup>2</sup></a> </span>
         <ul class="nav-links" id="nav-links">
             <li> <a class="a" href="#">Home</a> </li>
             <li> <a class="a" href="#">About</a> </li>
@@ -394,39 +384,42 @@
     <div class="hero">
         <div class="hero-content container display-flex">
             <div id="content-btn" class="float">
-                <section>Hello, welcome user! My name is <b> Omukuyia Anthony </b><br />
+                <div>Hello, welcome user! My name is <b> Omukuyia Anthony </b>
                     <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255);">experience.</span> </h1>
-                     <span class="frames">I DO  
-                        <span id="frames"></span>
-                        <script>
-                            const occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
-                            var occ_id = document.getElementById("frames");
-                            var i = 0;
-                            function changeContent() {         
-                            setTimeout(function() { 
-                                occ_id.innerHTML = occ[i];                    
-                                i++;                    
-                                if (i < occ.length) {           
-                                    changeContent();             
-                                }
-                                else{
-                                    i = 0;
-                                    changeContent();
-                                }
-                                }, 3000)
-                                
+                    <h1 class="frames">I DO <span id="frames"></span></h1>
+                    <script>
+                        const occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
+                        var occ_id = document.getElementById("frames");
+                        var i = 0;
+                        function changeContent() {         
+                        setTimeout(function() { 
+                            occ_id.innerHTML = occ[i];                    
+                            i++;                    
+                            if (i < occ.length) {           
+                                changeContent();             
                             }
-                            changeContent();
-                        </script>
-                    </span>
-                </section>
-                <section class="hero-btns">
+                            else{
+                                i = 0;
+                                changeContent();
+                            }
+                            }, 3000)
+                        }
+                        changeContent();
+                    </script>   
+                </div>
+                <div class="hero-btns">
                     <button class="btn-transparent btn">Hire Me</button>
                     <button class="btn-colored btn">Call Me</button>
-                </section>   
+                </div>   
             </div>
-            <div id="hero-image" class="float"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279754293" alt="Anthony"></div>
+            <div id="hero-image" class="float">
+                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1676279754293" alt="Anthony">
+            </div>
         </div>
+    </div>
+
+    <div class="about">
+        <h1 class="head">About Me</h1>
     </div>
 </body>
 </html>
