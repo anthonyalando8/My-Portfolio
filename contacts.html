@@ -4,737 +4,125 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa">
-    <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="stylesheet" href="default.css">
-
-    <title>Anthony | Home</title>
-    <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
-
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-
+    <title>Contacts</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@900&display=swap');
-        body{
-            font-family: 'Open Sans', sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-        header,nav{
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-        }
-        nav{
-            overflow: auto;
-            width: 100%;
-            height: 70px;
-        }
-        header > span{
-            font-size: 12px;
-            padding-left: 10px;
-        }
-        header ul, nav ul.nav-links{
-            display: flex;
-        }
-        ul.social-links, ul.nav-links, ul.contact-links{
-            list-style-type: none;
-        }
-        ul.social-links i, ul.nav-links li{
-            font-size: 20px;
-            padding: 0px 20px 0px 0px;
-        }
-        header i{
-            color: rgb(11,11,69);
-            text-decoration: none;
-        }
-        ul.nav-links a{
-            color: rgb(6, 6, 56);
-        }
-        ul.nav-links a:hover{
-            color: rgb(241, 162, 14);
-        }
-        button{
-            cursor: pointer;
-        }
-        .a{
-            text-decoration: none;
-        }
-        nav > span{
-            padding-left: 10px;
-            height: 60px;
-            width: 65px;
-        }
-        nav span img{
-            height: 100%;
-            width: 100%;
-            border-radius: 50%;
-        }
-        li.contacts ul.contact-links{
-            display: none;
-            overflow: auto;
-        }
-        li.contacts ul.contact-links > li{
-            padding: 10px;
-            background-color: rgb(252, 251, 251);
-            border-bottom: 1px solid rgb(218, 214, 214);
-        }
-        li.contacts ul.contact-links li:last-child{
-            border-bottom: none;
-        }
-        li.contacts ul.contact-links > li:first-child{
-            border-top: 1px solid rgb(218, 214, 214);
-        }
-        .hamburger{
-            padding-right: 10px;
-            display: none;
-        }
-        .hamburger button{
-            background-color: transparent;
-            border: none;
-            font-size: 28px;
-        }
-        .nav-active{
-            left: 0%;
-        }
-        
-        .float{
-            float: left;
-        }
-        .hero{
-            background-image: url("https://ik.imagekit.io/anthonyalando/My_Portfolio/comp.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678262813534");
-            background-repeat: no-repeat;
-            background-size: 550px 550px;
-            background-position: right;
-            background-color: white;
-        }
-        #Fname, #Lname{
-            font-size: 60px;
-        }
-        #Fname{
-            color: blue;
-        }
-        #content-btn{
-            padding-top: 100px;
-            padding-left: 50px;
-        }
-        #content-btn > div{
-            font-size: 18px;
-        }
-        #content-btn > div > h1{
-               font-size: 24px;
-               word-spacing: 5px;
-         }
-        #content-btn .frames{
-            text-transform: capitalize;
-            font-size: 36px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        #content-btn > div > h1.frames >span{
-            color: rgb(10, 11, 69);
-            opacity: 0;
-            animation: blurInOut 3.0s  3s infinite linear;
-        }
-        @keyframes blurInOut{
-            0%{
-                opacity: 0;
-                transform: scale(1.5);
-            }
-            25%{
-                opacity: 0.5;
-                transform: scale(1.2);
-            }
-            50%{
-                opacity: 1.0;
-                transform: scale(1.0);
-            }
-            75%{
-                opacity: 0.5;
-            }
-            95%{
-                opacity: 0;
-            }
-        }
-
-        .btn{
-            padding: 10px;
-            width: 250px;
-            font-size: 18px;
-            border-radius: 5px;
-            border: none;
-            letter-spacing: 1px;
-        }
-        .hero-btns{
-           justify-content: space-between;
-           align-items: center;
-           margin-top: 20px;
-        }
-        .btn-transparent{
-            background-color: transparent;
-            border: 1px solid rgb(218, 207, 207);
-        }
-        .btn-colored{
-            background-color: rgb(241, 162, 14);
-            color: white;
-        }
-        
-        .about-content{
-            padding: 10px;
-        }
-        .about-content .btn{
-            margin-top: 20px;
-            padding: 10px;
-            width: 310px;
-        }
-        .e-bold{
-            width: 100%;
-            text-align: center;
-        }
-        .about img{
-            width: 50%;
-            height: 70%;
-            margin: 50px auto;
-        }
-        .slide-show-container > div{
-            line-height: 1.5;
-            animation: ch-opacity 2s 1;
-        }
-        @keyframes ch-opacity{
-            0%{opacity: 0;}
-            100%{opacity: 1.0;}
-        }
-        .slide-show-container > div:not(:first-child) {
-            display: none;
-        }
-        .project-link img, .achieve-link img{
-            width: 100%;
-            height: 250px;
-        }
-        .stop-scrolling{
-            height: 100%;
-            overflow: hidden;
-        }
-        ul.social-profile{
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-        ul.social-profile li{
-            padding: 10px;
-            font-size: 36px;
-            color: gray;
-        }
-        .contact-section .container.position-absolute{
-            width: 80%;
-            margin: auto 10%;
-        }
-        .contact-section .split-half img{
-            width: 100%;
-            height: 150px;
-            border-radius: 5px;
-        }
-        .contact-section  .split-half.container > .split-half .image{
-            width: 100%;
-            text-align: center;
-        }
-        .contact-section ul{
-            padding: 15px;
-        }
-        .projects img{
-            width: 100%;
-            height: 400px;
-        }
-        .sticky{
-            position: fixed!important;
-            top: 0%;
-            z-index: 7;
-            width: 100%;
-            transition: background-color 2s;
+        *{
             background-color: whitesmoke;
-            box-shadow: 0 2.5px 2.5px rgb(167, 164, 164);
-            animation: height 1s 1 linear;
-            overflow: hidden;
         }
-        @media screen and (max-width: 800px) {
-            header{
-                display: none;
-            }
-            ul.social-links{
-                padding: 0;
-                width: 100%;
-            }
-            nav{
-               height: 50px;
-            }
-            nav > span{
-               height: 40px;
-               width: 45px;
-            }
-            nav > ul{
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                background-color: white;
-                flex-direction: column;
-                position: absolute;
-                top: 50px;
-                left: -100%;
-                transition: left 0.5s;
-                padding: 0;
-                margin: 0;
-            }
-            nav ul, .contacts{
-                overflow: auto;   
-            }
-            nav ul a{
-               font-size: 14px;
-            }
-            nav ul.nav-links > li{
-                padding: 10px 5px!important;
-                border-bottom: 1.5px solid rgb(235, 229, 229);
-            }
-            .nav-bar ul.nav-links li.contacts:hover > ul.contact-links{
-                display: initial;
-            }
-            
-            .hamburger{
-                display: initial;
-            }
-            .split-fifth{
+        .address{
+            padding-top: 50px;
+        }
+        h4.name{
+            color: rgb(185, 180, 180);
+        }
+        h2.head-custom{
+            font-weight: normal;
+            letter-spacing: 1.5px;
+            font-size: 36px;
+        }
+        
+        .contact-form{
+            padding-top: 150px;
+        }
+        input[type="text"],input[type="email"]{
+            width: 90%;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid rgb(159, 157, 157);
+        }
+        textarea{
             width: 100%;
-            }
-            .split-eighth{
-                width: 100%;
-            }
-            .hero{
-                background-size: 250px 250px;
-                background-position: bottom;
-            }
-            .hero-content{
-                width: 95%;
-                height: auto;
-                margin: 20px 2.5%;
-                border-radius: 5px;
-            }
-            #hero-image{
-                height: 300px;
-                width: 100%;
-            }
-            #content-btn{
-                width: 100%;
-                padding: 0;
-                text-align: center;
-            }  
-            #content-btn > div{
-               font-size: 14px;
-            } 
-            #content-btn > div > h1{
-               font-size: 16px;
-            } 
-            #content-btn > div > h1 + h1.frames{
-               font-size: 24px;
-            } 
-             .hero-btns{
-                width: 90%;
-                margin: auto;
-            }
-             .btn{
-                width: 100%;
-                margin-top: 10px;
-            }
-            .slide-show-container > div{
-                height: 300px;
-                overflow: hidden;
-             }
-            .projects img{
-                width: 100%;
-                height: 250px!important;
-            }
-            .about-content{
-                padding: 0;
-            }
-            .about-content .btn{
-                margin: 20px auto;
-                width: 95%;
-            }
-            .about img{
-                width: 80%;
-                height: auto;
-                margin: 50px auto;
-            }
-            .contact-section .container.position-absolute{
-                width: 100%;
-                margin: auto;
-            }
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid rgb(159, 157, 157);
+        }
+        input[type="submit"]{
+            width: 200px;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 20px;
+            color: rgb(12, 0, 0);
+            background-color: rgb(199, 197, 197);
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        .footer-content {
+            background-color: rgb(42, 42, 42);
+            margin-top: 50px;
+            padding: 50px 0px;
+        }
+        ul, li{
+            background-color: rgb(42, 42, 42);
+        }
+        ul{
+            display: flex;
+            list-style-type: none;
+            justify-content: space-evenly;
+        }
+        li{
+            padding: 10px;
+            color: rgb(166, 165, 165);
         }
     </style>
-    
 </head>
-<body id="body">
-    <div class="hero section">
-        <script type="text/babel">
-            function Support() {
-      
-              const styleDisplay = {
-                  display: "flex"
-              };
-              return(
-                  <>
-                  <div>
-                      <ul className="social-links" style={styleDisplay}>
-                          <li>
-                              <a className="a" title="facebook" href="https://www.facebook.com/anthony.omukuyia.9/"><i className="fa-brands fa-square-facebook"></i></a>
-                          </li>
-                          <li>
-                              <a className="a" title="linkedin" href="#"><i className="fa-brands fa-linkedin"></i></a>
-                          </li>
-                          <li>
-                              <a className="a" title="twitter" href="#"><i className="fa-brands fa-square-twitter"></i></a>
-                          </li>
-                          <li>
-                              <a className="a" title="Click to call" href="tel:+254700536326"><i className="fa-solid fa-phone-volume"></i></a>
-                          </li>
-                      </ul>
-                  </div>
-                  </>
-              );
-            }
-            
-            ReactDOM.render(<Support />, document.getElementById('header-social-links'));
-      
-            function Contacts(){
-              return(
-                  <>
-                      <a className="a">Contacts</a>
-                      <ul className="contact-links">
-                          <li> <a className="a" href="#">Work</a> </li>
-                          <li> <a className="a" href="#">Office</a> </li>
-                          <li> <a className="a" href="#">Location</a> </li>
-                          <li> <a className="a" href="#">Send Mail</a> </li>
-                          <li className="social" id="more-contacts"> </li>
-                      </ul>
-                  </>
-              );
-              }
-          ReactDOM.render(<Contacts />, document.getElementById('contacts-nav'));
-      
-          //const contact = ReactDOM.createRoot(document.getElementById("contacts-nav"));
-          //contact.render(<Contacts />);
-      
-          
-          const support = ReactDOM.createRoot(document.getElementById("more-contacts"));
-          support.render(<Support />);
-        </script>
-      
-      
-        <header class="header">
-            <span>Welcome to my website</span>
-            <ul class="social-links" id="header-social-links"></ul>
-        </header>
-        <script>
-            function showNav(){
-                var nav = document.getElementById("nav-links");
-                nav.classList.toggle("nav-active");
-                document.getElementById('body').classList.toggle("stop-scrolling");
-            } 
-        </script>
-        <nav class="nav-bar" id="nav-bar">
-            <span> <a class="a logo" href="index.html">
-                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/owner_b-ckrFH5Z?ik-sdk-version=javascript-1.4.3&updatedAt=1673014292036" alt="anthony">
-            </span>
-            <ul class="nav-links" id="nav-links">
-                <li> <a class="a" href="#">Home</a> </li>
-                <li> <a class="a" href="contacts.html">About</a> </li>
-                <li> <a class="a" href="#">Gallery</a> </li>
-                <li> <a class="a" href="#">Projects</a> </li>
-                <li  class="contacts"><a class="a" href="contacts.html" id="contacts-nav"></a></li>
-            </ul>
-            <div class="hamburger">
-                <button class="btn-transparent button" onclick="showNav()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-        <script>
-        window.onscroll = function(){
-            var navbar = document.getElementById("nav-bar");
-            var sticky = navbar.offsetTop;
-            if (window.pageYOffset > sticky) {
-                    navbar.classList.add("sticky");
-            } else {
-                    navbar.classList.remove("sticky");
-            }
-        };
-        </script>
-        <div class="section position-relative">
-            <div class="hero-content center position-absolute">
-                <div id="content-btn" class="float">
-                <div>
-                    Hello, welcome user! I am<br /> <b> <span id="Fname">Omukuyia</span> <span id="Lname">Anthony</span> </b>
-                    <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255)">experience.</span> </h1>
-                    <h1 class="frames">I DO <span id="frames"></span></h1>
-                    <script>
-                        const occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
-                        var occ_id = document.getElementById("frames");
-                        var i = 0;
-                        function changeContent() {         
-                        setTimeout(function() { 
-                            occ_id.innerHTML = occ[i];                    
-                            i++;                    
-                            if (i < occ.length) {           
-                                changeContent();             
-                            }
-                            else{
-                                i = 0;
-                                changeContent();
-                            }
-                            }, 3000)
-                        }
-                        changeContent();
-                    </script>   
-                </div>
-                    <div class="hero-btns">
-                        <button class="btn-transparent btn">Hire Me</button>
-                        <button class="btn-colored btn">Call Me</button>
-                    </div>   
-                </div>
-            </div>
-        </div>
-        
-    </div>
+<body>
     <main>
-        <div class="about full-width bg-aliceblue section ">
-            <h1 class="head text-center">About</h1>
-            <div class="section position-relative">
-                <div class="container full-width display-flex center position-absolute">
-                    <div class="split-sixth text-center">
-                        <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
-                    </div>
-                    <div class="about-content slide-show-container split-forth">
-                        <section class="p">
-                            <h2>OMUKUYIA ANTHONY ALANDO</h2>
-                            <b style="color: rgb(109, 108, 108);">Web Designer, Android, Software Development</b><br />
-                            <button class="btn btn-colored">Visit Company Web</button>
-                        </section>
-                        <div class="slide p" id="slide1">
-                            <b>Skills</b>
-                            <p>Hi, I'm Omukuyia Anthony, a IT expert with 4 years of experience in Web Design. 
-                                I'm passionate about coding and have a proven track record of web designs.
-                            </p>
-
-                            <p>After completing my degree at KU, I started my career at google. 
-                                Since then, I've worked at several other companies, honing my skills in programming.
-                            </p>
-                        </div>
-                        <div class="slide p" id="slide2">
-                            <p>I specialize in data analysis, and have worked on projects ranging from web development, 
-                                android development. Coding is indeed fun.
-                            </p>
-                            <p><b>Hobby</b><br />
-                                Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
-                                and learning new things from the books I read.
-                            </p>
-                        </div>
-                        <section class="p">
-                            <div id="Education">
-                                <b>Education</b><br />
-                                Primary<br />
-                                Secondary<br />
-                                Kenyatta University<br />
-                            </div>
-                            <ul class="social-profile">
-                                <li>
-                                    <a class="a" href=""><i class="fa-brands fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a class="a" href=""><i class="fa-brands fa-github"></i></a>
-                                </li>
-                                <li>
-                                    <a class="a" href=""><i class="fa-brands fa-linkedin"></i></a>
-                                </li>
-                                <li>
-                                    <a class="a" href=""><i class="fa-brands fa-instagram"></i></a>
-                                </li>
-                            </ul>
-                        </section>
-                        <script>
-                            function createSlideShow() {
-                            var currentSlideIndex = 0;
-                            var slides = document.querySelectorAll(".slide-show-container > div");
-
-                            function slideShow() {
-                                slides[currentSlideIndex].style.display = "none";
-                                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                                slides[currentSlideIndex].style.display = "block";
-                            }
-
-                            slides[currentSlideIndex].style.display = "block";
-                            setInterval(slideShow, 10000); // change slide every 10 seconds
-                            }
-
-                            createSlideShow();
-                        </script>   
-                    </div>  
-                </div> 
-            </div>
-        </div>
-            
-        <div class="full-width section">
-            <p class="e-bold">The foundation of quality work.</p>
-            <div class="section full-width position-relative">
-                <div class="container full-width center position-absolute display-flex">
-                    <div class="split-third project-link card">
-                        <a class="a"href="">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/why-image-one_LJHoqpBgG?ik-sdk-version=javascript-1.4.3&updatedAt=1673535031874"alt="Softtronic project">
-                            </div>
-                            <p class="fn-bold p">Softtronic Projects.</p>
-                            <p class="p">Explore on our major projects in recent years.</p>
-                        </a>
-                    </div>
-                    <div class="split-third achieve-link card">
-                        <a class="a" href="">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/achievements_bmCWvtFre?ik-sdk-version=javascript-1.4.3&updatedAt=1673535579837"alt="Softtronic achieves">
-                            </div>
-                            <p class="p fn-bold">Achievements.</p>
-                            <p class="p">See why this organisation is trusted with over 500,000+ customer.</p>
-                        </a>
-                    </div>
-                    <div class="split-third achieve-link card">
-                        <a class="a" href="">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/locate-icon_nuYcQjGgB?ik-sdk-version=javascript-1.4.3&updatedAt=1678355626605"alt="Softtronic achieves">
-                            </div>
-                            <p class="fn-bold p">Locate us</p>
-                            <p class="p">Let us do business</p>
-                        </a>
-                    </div>
-                </div>
-            </div>    
-        </div> 
-
-        <div class="full-width section bg-aliceblue">
-            <p class="e-bold text-center full-width"id="project-head" >Lets take a step a head, check our recent projects</p>
-            <div class="full-width section position-relative">
-                <div class="projects full-width center position-absolute">
-                    <div class="container full-width display-flex">
-                        <div class="split-third left card">
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
-                            
-                            <p class="fn-bold p">Android Chat Application</p>
-                            <p class="p">
-                                A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
-                                messages to each other, create groups, and share files securely in real-time.
-                            </p>
-                        </div>
-                        <div class="split-third middle card">
-                            <p class="fn-bold p">School Management System</p>
-                            <p class="p">
-                                A School Management System is a software application that manages administrative tasks 
-                                such as student enrollment, class schedules, attendance, grades, and communication with parents. 
-                                It streamlines school operations, improves collaboration, and enhances student performance.
-                            </p>
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
-                        </div>
-                        <div class="split-third right card">
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
-                            <p class="fn-bold p">Point of sale machine.</p>
-                            <p class="p">
-                                A POS (Point of Sale) system is a software application that manages sales transactions, 
-                                inventory, and customer data. It allows businesses to process payments and track sales in 
-                                real-time.
-                            </p>
-                        </div>
+        <div class="container display-flex address">
+            <div class="s-half">
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="98%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        <a href="https://123movies-i.net">full house 123movies</a><br>
+                        <style>.mapouter{position:relative;text-align:right;height:400px;width:98%;}</style>
+                        <a href="https://www.embedgooglemap.net">google map iframe</a>
+                        <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:98%;}</style>
                     </div>
                 </div>
             </div>
-            
+            <div class="s-half"> <h4 class="name">OMUKUYIA ANTHONY ALANDO</h4>
+                <h2 class="head-custom">It’s Easy to Find Us on the Map</h2>
+                <h2 class="head-custom">Contact Us</h2>
+                <b>Administrative & Executive Offices</b>
+                <p> Penn Plaza, 14th Floor <br />
+                New York, New York  10001 <br />
+                212.897.9650 <br /></p>
+                
+                <b>Visit Our Woodhaven Branch</b>
+                <p> Jamaica Avenue <br />
+                Woodhaven, New York 11421 <br />
+                718.847.6333 <br /></p>
+            </div>
         </div>
 
-        <div class="contact-section section full-width">
-            <h1 class="head text-center">Contact Us</h1>
-            <p class="text-center">We are looking forward to hearing from you. Please select how we can help you below.</p>
-            <div class="position-relative section full-width">
-                <div class="container position-absolute center display-flex">
-                    <div class="split-half container display-flex">
-                        <div class="split-half card">
-                            <div class="image">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/demo-icon_y3lxY_izT?ik-sdk-version=javascript-1.4.3&updatedAt=1678366076923" alt="">
-                            </div>
-                            <p class="fn-bold">Start Demo</p>
-                            <ul>
-                                <li>Find right solutions</li>
-                                <li>Request product demo</li>
-                            </ul>
-                        </div>
-                        <div class="split-half card">
-                            <div class="image">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/office-icon_kJeJh6NqU?ik-sdk-version=javascript-1.4.3&updatedAt=1678366433941" alt="">
-                            </div>
-                            <p class="fn-bold">Contact Office</p>
-                            <ul>
-                                <li>Reach out</li>
-                                <li>Call Now</li>
-                            </ul>
-                        </div>
+        <div class="contact-form">
+            <p>
+                Please do not provide sensitive personal information, such as your social security number, address, telephone number, or checking or savings account numbers in an email as it may not necessarily be secure against interception. 
+                If you need to provide sensitive information , please contact us directly at 212-897-9650.
+            </p>
+            <form class="message">
+                <div class="container display-flex">
+                    <div class="s-half">
+                        <input type="text" name="UName" placeholder="Name" required>
                     </div>
-                    <div class="split-half container display-flex">
-                        <div class="split-half card">
-                            <div class="image">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/techical_C-DChszFv?ik-sdk-version=javascript-1.4.3&updatedAt=1678366343431" alt="">
-                            </div>
-                            <p class="fn-bold" p>Technical Support</p>
-                            <ul>
-                                <li>Ask for support</li>
-                                <li>Finds answers to FAQs</li>
-                            </ul>
-                        </div>
-                        <div class="split-half card">
-                            <div class="image">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/other-inquiry-edit_AlbPFqeQj?ik-sdk-version=javascript-1.4.3&updatedAt=1678366253582" alt="">
-                            </div>
-                            <p class="fn-bold">Other Inquiry</p>
-                            <ul>
-                                <li>Get more help</li>
-                                <li>Ask any quiz?</li>
-                            </ul>
-                        </div>
+                    <div class="s-half">
+                        <input type="email" name="UEmail" placeholder="Email" required>
                     </div>
                 </div>
-            </div> 
-        </div> 
+                <textarea class="txtMsg" cols="50" rows="10" placeholder="Write your message here"></textarea>
+                <input type="submit" value="Submit" name="submit">
+            </form>
+        </div>
     </main>
-    <script>
-        // Get all the elements with the "box" class
-        const boxes = document.querySelectorAll('.center');
-
-        function checkBoxes() {
-        // Loop through each box
-        boxes.forEach(box => {
-            // Get the top and bottom position of the box
-            const boxTop = box.getBoundingClientRect().top;
-            const boxBottom = box.getBoundingClientRect().bottom;
-
-            // Check if the box is in the viewport
-            if (boxTop < window.innerHeight && boxBottom >= 0) {
-            box.classList.add('show');
-            } else {
-            box.classList.remove('show');
-            }
-        });
-        }
-
-        // Call the checkBoxes function on page load and on scroll
-        window.addEventListener('load', checkBoxes);
-        window.addEventListener('scroll', checkBoxes);
-
-    </script>
+    <div class="footer-content">
+        <ul class="footer-list display-flex">
+            <li><a class="a" href="index.html">Home </a></li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Gallery</li>
+            <li>Visit Us</li>
+        </ul>
+    </div>
 </body>
 </html>
