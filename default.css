@@ -11,6 +11,9 @@ main{
     width: 100%;
     margin: auto;
 }
+.a{
+  text-decoration: none;
+}
 .container{
   display: flex;
 }
@@ -31,8 +34,16 @@ main{
 .center {
     margin: 0;
     top: 50%;
-    -ms-transform: translate(0%, -50%);
-    transform: translate(0%, -50%);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    overflow: hidden;
+}
+.center.show {
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  opacity: 1;
+  
 }
   .text-center{
     text-align: center;
@@ -103,7 +114,7 @@ h1.head{
   .position-relative{
     position: static!important;
   }
-  .center {
+  .center.show {
     -ms-transform: translate(0%, 0%);
     transform: translate(0%, 0%);
   }
