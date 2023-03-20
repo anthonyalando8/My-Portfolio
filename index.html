@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="default.css">
+
+    <title>Anthony | Home</title>
+    <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@900&display=swap');
+        body{
+            font-family: 'Open Sans', sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        header,nav{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        nav{
+            overflow: auto;
+            width: 100%;
+            height: 70px;
+        }
+        header > span{
+            font-size: 12px;
+            padding-left: 10px;
+        }
+        header ul, nav ul.nav-links{
+            display: flex;
+        }
+        ul.social-links, ul.nav-links, ul.contact-links{
+            list-style-type: none;
+        }
+        ul.social-links i, ul.nav-links li{
+            font-size: 20px;
+            padding: 0px 20px 0px 0px;
+        }
+        header i{
+            color: rgb(11,11,69);
+            text-decoration: none;
+        }
+        ul.nav-links a{
+            color: rgb(6, 6, 56);
+        }
+        ul.nav-links a:hover{
+            color: rgb(241, 162, 14);
+            text-decoration: 2px underline rgb(241, 162, 14);
+        }
+        button{
+            cursor: pointer;
+        }
+        .a{
+            text-decoration: none;
+        }
+        nav > span{
+            padding-left: 10px;
+            height: 60px;
+            width: 65px;
+        }
+        nav span img{
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+        li.contacts ul.contact-links{
+            display: none;
+            overflow: auto;
+        }
+        li.contacts ul.contact-links > li{
+            padding: 10px;
+            background-color: rgb(252, 251, 251);
+            border-bottom: 1px solid rgb(218, 214, 214);
+        }
+        li.contacts ul.contact-links li:last-child{
+            border-bottom: none;
+        }
+        li.contacts ul.contact-links > li:first-child{
+            border-top: 1px solid rgb(218, 214, 214);
+        }
+        .hamburger{
+            padding-right: 10px;
+            display: none;
+        }
+        .hamburger button{
+            background-color: transparent;
+            border: none;
+            font-size: 28px;
+        }
+        .nav-active{
+            left: 0%;
+        }
+        
+        .float{
+            float: left;
+        }
+        .hero{
+            
+            background-repeat: no-repeat;
+            background-size: 550px 550px;
+            background-position: right;
+            background-color: white;
+            animation: bg-change 10s infinite ease;
+        }
+        @keyframes bg-change{
+            from{
+                background-image: url("https://ik.imagekit.io/anthonyalando/My_Portfolio/comp.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1678262813534");
+            }
+            to{
+                background-image: url("https://ik.imagekit.io/anthonyalando/My_Portfolio/abstract.jpg?updatedAt=1679296306521");
+            }
+        }
+        #Fname, #Lname{
+            font-size: 60px;
+        }
+        #Fname{
+            color: blue;
+        }
+        #content-btn{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        #content-btn > div{
+            font-size: 18px;
+        }
+        #content-btn > div > h1{
+               font-size: 24px;
+               word-spacing: 5px;
+         }
+        #content-btn .frames{
+            text-transform: capitalize;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        #content-btn > div > h1.frames >span{
+            color: rgb(10, 11, 69);
+            opacity: 0;
+            animation: blurInOut 3.0s  3s infinite linear;
+        }
+        @keyframes blurInOut{
+            0%{
+                opacity: 0;
+                transform: scale(1.5);
+            }
+            25%{
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+            50%{
+                opacity: 1.0;
+                transform: scale(1.0);
+            }
+            75%{
+                opacity: 0.5;
+            }
+            95%{
+                opacity: 0;
+            }
+        }
+
+        .btn{
+            padding: 10px;
+            width: 250px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+            letter-spacing: 1px;
+        }
+        .hero-btns{
+           justify-content: space-between;
+           align-items: center;
+           margin-top: 20px;
+        }
+        .btn-transparent{
+            background-color: transparent;
+            border: 1px solid rgb(218, 207, 207);
+        }
+        .btn-colored{
+            background-color: rgb(241, 162, 14);
+            color: white;
+        }
+        
+        .about-content{
+            padding: 10px;
+        }
+        .about-content .btn{
+            margin-top: 20px;
+            padding: 10px;
+            width: 310px;
+        }
+        .e-bold{
+            width: 100%;
+            text-align: center;
+        }
+        .about img{
+            width: 50%;
+            height: 70%;
+            margin: 50px auto;
+        }
+        .slide-show-container > div{
+            line-height: 1.5;
+            animation: ch-opacity 2s 1;
+        }
+        @keyframes ch-opacity{
+            0%{opacity: 0;}
+            100%{opacity: 1.0;}
+        }
+        .slide-show-container > div:not(:first-child) {
+            display: none;
+        }
+        .project-link img, .achieve-link img{
+            width: 100%;
+            height: 250px;
+        }
+        .stop-scrolling{
+            height: 100%;
+            overflow: hidden;
+        }
+        ul.social-profile{
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul.social-profile li{
+            padding: 10px;
+            font-size: 36px;
+            color: gray;
+        }
+        .contact-section .container.position-absolute{
+            width: 80%;
+            margin: auto 10%;
+        }
+        .contact-section .split-half img{
+            width: 100%;
+            height: 150px;
+            border-radius: 5px;
+        }
+        .contact-section  .split-half.container > .split-half .image{
+            width: 100%;
+            text-align: center;
+        }
+        .contact-section ul{
+            padding: 15px;
+        }
+        .projects img{
+            width: 100%;
+            height: 400px;
+        }
+        .sticky{
+            position: fixed!important;
+            top: 0%;
+            z-index: 7;
+            width: 100%;
+            transition: background-color 2s;
+            background-color: whitesmoke;
+            box-shadow: 0 2.5px 2.5px rgb(167, 164, 164);
+            animation: height 1s 1 linear;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 800px) {
+            header{
+                display: none;
+            }
+            ul.social-links{
+                padding: 0;
+                width: 100%;
+            }
+            nav{
+               height: 50px;
+            }
+            nav > span{
+               height: 40px;
+               width: 45px;
+            }
+            nav > ul{
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                flex-direction: column;
+                position: absolute;
+                top: 50px;
+                left: -100%;
+                transition: left 0.5s;
+                padding: 0;
+                margin: 0;
+            }
+            nav ul, .contacts{
+                overflow: auto;   
+            }
+            nav ul a{
+               font-size: 14px;
+            }
+            nav ul.nav-links > li{
+                padding: 10px 5px!important;
+                border-bottom: 1.5px solid rgb(235, 229, 229);
+            }
+            .nav-bar ul.nav-links li.contacts:hover > ul.contact-links{
+                display: initial;
+            }
+            
+            .hamburger{
+                display: initial;
+            }
+            .split-fifth{
+            width: 100%;
+            }
+            .split-eighth{
+                width: 100%;
+            }
+            .hero{
+                background-size: 250px 250px;
+                background-position: bottom;
+            }
+            .hero-content{
+                width: 95%;
+                height: auto;
+                margin: 20px 2.5%;
+                border-radius: 5px;
+            }
+            #hero-image{
+                height: 300px;
+                width: 100%;
+            }
+            #content-btn{
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }  
+            #content-btn > div{
+               font-size: 14px;
+            } 
+            #content-btn > div > h1{
+               font-size: 16px;
+            } 
+            #content-btn > div > h1 + h1.frames{
+               font-size: 24px;
+            } 
+             .hero-btns{
+                width: 90%;
+                margin: auto;
+            }
+             .btn{
+                width: 100%;
+                margin-top: 10px;
+            }
+            .slide-show-container > div{
+                min-height: 200px;
+                overflow: hidden;
+             }
+            .projects img{
+                width: 100%;
+                height: 250px!important;
+            }
+            .about-content{
+                padding: 0;
+            }
+            .about-content .btn{
+                margin: 20px auto;
+                width: 95%;
+            }
+            .about img{
+                width: 80%;
+                height: auto;
+                margin: 50px auto;
+            }
+            .contact-section .container.position-absolute{
+                width: 100%;
+                margin: auto;
+            }
+            .footer .container .split-third{
+            padding: initial;
+            }
+        }
+    </style>
+    
+</head>
+<body id="body">
+    <div class="hero section" id="home">
+        <script type="text/babel">
+            function Support() {
+      
+              const styleDisplay = {
+                  display: "flex"
+              };
+              return(
+                  <>
+                  <div>
+                      <ul className="social-links" style={styleDisplay}>
+                          <li>
+                              <a className="a" title="facebook" href="https://www.facebook.com/anthony.omukuyia.9/"><i className="fa-brands fa-square-facebook"></i></a>
+                          </li>
+                          <li>
+                              <a className="a" title="linkedin" href="#"><i className="fa-brands fa-linkedin"></i></a>
+                          </li>
+                          <li>
+                              <a className="a" title="twitter" href="#"><i className="fa-brands fa-square-twitter"></i></a>
+                          </li>
+                          <li>
+                              <a className="a" title="Click to call" href="tel:+254700536326"><i className="fa-solid fa-phone-volume"></i></a>
+                          </li>
+                      </ul>
+                  </div>
+                  </>
+              );
+            }
+            
+            ReactDOM.render(<Support />, document.getElementById('header-social-links'));
+      
+            function Contacts(){
+              return(
+                  <>
+                      <a className="a">Contacts</a>
+                      <ul className="contact-links">
+                          <li> <a className="a" href="#">Work</a> </li>
+                          <li> <a className="a" href="#">Office</a> </li>
+                          <li> <a className="a" href="#">Location</a> </li>
+                          <li> <a className="a" href="#">Send Mail</a> </li>
+                          <li className="social" id="more-contacts"> </li>
+                      </ul>
+                  </>
+              );
+              }
+          ReactDOM.render(<Contacts />, document.getElementById('contacts-nav'));
+      
+          //const contact = ReactDOM.createRoot(document.getElementById("contacts-nav"));
+          //contact.render(<Contacts />);
+      
+          
+          const support = ReactDOM.createRoot(document.getElementById("more-contacts"));
+          support.render(<Support />);
+        </script>
+      
+      
+        <header class="header">
+            <span>Welcome to my website</span>
+            <ul class="social-links" id="header-social-links"></ul>
+        </header>
+        <script>
+            function showNav(){
+                var nav = document.getElementById("nav-links");
+                nav.classList.toggle("nav-active");
+                document.getElementById('body').classList.toggle("stop-scrolling");
+            } 
+        </script>
+        <nav class="nav-bar" id="nav-bar">
+            <span> <a class="a logo" href="index.html">
+                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/owner_b-ckrFH5Z?ik-sdk-version=javascript-1.4.3&updatedAt=1673014292036" alt="anthony">
+            </span>
+            <ul class="nav-links" id="nav-links">
+                <li> <a class="a" href="#home">Home</a> </li>
+                <li> <a class="a" href="#about">About</a> </li>
+                <li> <a class="a" href="#gallery">Gallery</a> </li>
+                <li> <a class="a" href="#projects">Projects</a> </li>
+                <li  class="contacts"><a class="a" href="contacts.html" id="contacts-nav"></a></li>
+            </ul>
+            <div class="hamburger">
+                <button class="btn-transparent button" onclick="showNav()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <script>
+        window.onscroll = function(){
+            var navbar = document.getElementById("nav-bar");
+            var sticky = navbar.offsetTop;
+            if (window.pageYOffset > sticky) {
+                    navbar.classList.add("sticky");
+            } else {
+                    navbar.classList.remove("sticky");
+            }
+        };
+        </script>
+        <div class="section position-relative">
+            <div class="hero-content center position-absolute">
+                <div id="content-btn" class="float">
+                <div>
+                    Hello, welcome user! I am<br /> <b> <span id="Fname">Omukuyia</span> <span id="Lname">Anthony</span> </b>
+                    <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255)">experience.</span> </h1>
+                    <h1 class="frames">I DO <span id="frames"></span></h1>
+                    <script>
+                        const occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
+                        var occ_id = document.getElementById("frames");
+                        var i = 0;
+                        function changeContent() {         
+                        setTimeout(function() { 
+                            occ_id.innerHTML = occ[i];                    
+                            i++;                    
+                            if (i < occ.length) {           
+                                changeContent();             
+                            }
+                            else{
+                                i = 0;
+                                changeContent();
+                            }
+                            }, 3000)
+                        }
+                        changeContent();
+                    </script>   
+                </div>
+                    <div class="hero-btns">
+                        <button class="btn-transparent btn">Hire Me</button>
+                        <button class="btn-colored btn">Call Me</button>
+                    </div>   
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <main>
+        <div class="about full-width bg-aliceblue section" id="about">
+            <h1 class="head text-center">About</h1>
+            <div class="section position-relative ">
+                <div class="full-width center position-absolute">
+                    <div class="container full-width display-flex">
+                        <div class="split-sixth text-center">
+                            <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
+                        </div>
+                        <div class="about-content slide-show-container split-forth">
+                            <section class="p">
+                                <h2>OMUKUYIA ANTHONY ALANDO</h2>
+                                <b style="color: rgb(109, 108, 108);">Web Designer, Android, Software Development</b><br />
+                                <button class="btn btn-colored" onclick=" window.open('https://anthonyalando8.github.io/softtronic-east-africa.github.io/','_blank')">Visit Company Web</button>
+                            </section>
+                            <div class="slide p" id="slide1">
+                                <b>Skills</b>
+                                <p>Hi, I'm Omukuyia Anthony, a IT expert with 4 years of experience in Web Design. 
+                                    I'm passionate about coding and have a proven track record of web designs.
+                                </p>
+
+                                <p>After completing my degree at KU, I started my career at google. 
+                                    Since then, I've worked at several other companies, honing my skills in programming.
+                                </p>
+                            </div>
+                            <div class="slide p" id="slide2">
+                                <p>I specialize in data analysis, and have worked on projects ranging from web development, 
+                                    android development. Coding is indeed fun.
+                                </p>
+                                <p><b>Hobby</b><br />
+                                    Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
+                                    and learning new things from the books I read.
+                                </p>
+                            </div>
+                            <section class="p">
+                                <div id="Education">
+                                    <b>Education</b><br />
+                                    Primary School<br />
+                                    Secondary School<br />
+                                    Kenyatta University<br />
+                                </div>
+                                <ul class="social-profile">
+                                    <li>
+                                        <a class="a" href=""><i class="fa-brands fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="a" href=""><i class="fa-brands fa-github"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="a" href=""><i class="fa-brands fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="a" href=""><i class="fa-brands fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </section>
+                            <script>
+                                function createSlideShow() {
+                                var currentSlideIndex = 0;
+                                var slides = document.querySelectorAll(".slide-show-container > div");
+
+                                function slideShow() {
+                                    slides[currentSlideIndex].style.display = "none";
+                                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                                    slides[currentSlideIndex].style.display = "block";
+                                }
+
+                                slides[currentSlideIndex].style.display = "block";
+                                setInterval(slideShow, 10000); // change slide every 10 seconds
+                                }
+                                createSlideShow();
+                            </script>   
+                        </div>
+                    </div>
+                    <div class="skills split-eighth"  style="margin:auto">
+                        <p class="fn-bold text-center">Technical Skills</p>
+                        <!-- Progress bars / Skills -->
+                        <style>
+                            .sea-grey{
+                                background-color: rgb(167, 166, 166);
+                            }
+                            .sea-dark-grey{
+                                background-color: rgb(107, 107, 107);
+                                padding: 10px;
+                            }
+                        </style>
+                        <h4>Programming</h4>
+                        <div class="sea-grey full-width">
+                            <div class="sea-dark-grey " style="width:95%">95%</div>
+                        </div>
+                        <h4>Web Design</h4>
+                        <div class="sea-grey full-width">
+                            <div class="sea-dark-grey" style="width:85%">85%</div>
+                        </div>
+                        <h4>Graphics</h4>
+                        <div class="sea-grey full-width">
+                            <div class="sea-dark-grey" style="width:80%">80%</div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+            
+        <div class="full-width section">
+            <p class="e-bold">The foundation of quality work.</p>
+            <div class="section full-width position-relative">
+                <div class="container full-width center position-absolute display-flex">
+                    <div class="split-third project-link card">
+                        <a class="a"href="">
+                            <div class="why-image p">
+                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/why-image-one_LJHoqpBgG?ik-sdk-version=javascript-1.4.3&updatedAt=1673535031874"alt="Softtronic project">
+                            </div>
+                            <p class="fn-bold p">Softtronic Projects.</p>
+                            <p class="p">Explore on our major projects in recent years.</p>
+                        </a>
+                    </div>
+                    <div class="split-third achieve-link card">
+                        <a class="a" href="">
+                            <div class="why-image p">
+                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/achievements_bmCWvtFre?ik-sdk-version=javascript-1.4.3&updatedAt=1673535579837"alt="Softtronic achieves">
+                            </div>
+                            <p class="p fn-bold">Achievements.</p>
+                            <p class="p">See why this organisation is trusted with over 500,000+ customer.</p>
+                        </a>
+                    </div>
+                    <div class="split-third achieve-link card">
+                        <a class="a" href="">
+                            <div class="why-image p">
+                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/locate-icon_nuYcQjGgB?ik-sdk-version=javascript-1.4.3&updatedAt=1678355626605"alt="Softtronic achieves">
+                            </div>
+                            <p class="fn-bold p">Locate us</p>
+                            <p class="p">Let us do business</p>
+                        </a>
+                    </div>
+                </div>
+            </div>    
+        </div> 
+
+        <div class="full-width section bg-aliceblue" id="projects">
+            <p class="e-bold text-center full-width"id="project-head" >Lets take a step a head, check our recent projects</p>
+            <div class="full-width section position-relative">
+                <div class="projects full-width center position-absolute">
+                    <div class="container full-width display-flex">
+                        <div class="split-third left card">
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
+                            
+                            <p class="fn-bold p">Android Chat Application</p>
+                            <p class="p">
+                                A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
+                                messages to each other, create groups, and share files securely in real-time.
+                            </p>
+                        </div>
+                        <div class="split-third middle card">
+                            <p class="fn-bold p">School Management System</p>
+                            <p class="p">
+                                A School Management System is a software application that manages administrative tasks 
+                                such as student enrollment, class schedules, attendance, grades, and communication with parents. 
+                                It streamlines school operations, improves collaboration, and enhances student performance.
+                            </p>
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
+                        </div>
+                        <div class="split-third right card">
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
+                            <p class="fn-bold p">Point of sale machine.</p>
+                            <p class="p">
+                                A POS (Point of Sale) system is a software application that manages sales transactions, 
+                                inventory, and customer data. It allows businesses to process payments and track sales in 
+                                real-time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="contact-section section full-width">
+            <h1 class="head text-center">Contact Us</h1>
+            <p class="text-center">We are looking forward to hearing from you. Please select how we can help you below.</p>
+            <div class="position-relative section full-width">
+                <div class="container position-absolute center display-flex">
+                    <div class="split-half container display-flex">
+                        <div class="split-half card">
+                            <div class="image">
+                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/demo-icon_y3lxY_izT?ik-sdk-version=javascript-1.4.3&updatedAt=1678366076923" alt="">
+                            </div>
+                            <p class="fn-bold">Start Demo</p>
+                            <ul>
+                                <li>Find right solutions</li>
+                                <li>Request product demo</li>
+                            </ul>
+                        </div>
+                        <div class="split-half card">
+                            <div class="image">
+                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/office-icon_kJeJh6NqU?ik-sdk-version=javascript-1.4.3&updatedAt=1678366433941" alt="">
+                            </div>
+                            <p class="fn-bold">Contact Office</p>
+                            <ul>
+                                <li>Reach out</li>
+                                <li>Call Now</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="split-half container display-flex">
+                        <div class="split-half card">
+                            <div class="image">
+                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/techical_C-DChszFv?ik-sdk-version=javascript-1.4.3&updatedAt=1678366343431" alt="">
+                            </div>
+                            <p class="fn-bold" p>Technical Support</p>
+                            <ul>
+                                <li>Ask for support</li>
+                                <li>Finds answers to FAQs</li>
+                            </ul>
+                        </div>
+                        <div class="split-half card">
+                            <div class="image">
+                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/other-inquiry-edit_AlbPFqeQj?ik-sdk-version=javascript-1.4.3&updatedAt=1678366253582" alt="">
+                            </div>
+                            <p class="fn-bold">Other Inquiry</p>
+                            <ul>
+                                <li>Get more help</li>
+                                <li>Ask any quiz?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div> 
+        <div class="footer">
+            <div class="container full-width display-flex">
+                <div class="split-third info">
+                    <p class="fn-bold">Info</p>
+                    <p>Learning the art of programming, like most other disciplines, 
+                        consists of first learning the rules and then learning when to break them.
+                    </p>
+                    <style>
+                        
+                    </style>
+                    <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/social.png?updatedAt=1679308405925" usemap="#image_map">
+                    <map name="image_map">
+                      <area alt="Whatsapp" title="Whatsapp" href="https://wa.me/254700536326?text=Hello,%20I%20saw%20this%20online." coords="34,107,107,177" shape="rect">
+                      <area alt="Facebook" title="Facebook" href="https://www.facebook.com/anthony.omukuyia.9/" coords="194,111,263,177" shape="rect">
+                      <area alt="Twitter" title="Twitter" href="https://twitter.com/AnthonyOmukuyia" coords="114,29,182,95" shape="rect">
+                    </map>
+
+                </div>
+                <div class="split-third blog">
+                    <p class="fn-bold">Blog Post</p>
+                    <style>
+                        .blog a{
+                            padding: 10px;
+                        }
+                        .blog a:hover *, .blog a:hover,.footer table td:hover{
+                            background-color: black;
+                        }
+                        .blog img{
+                            height: 60px;
+                            width: 60px;
+                        }
+                        .blog a > p{
+                            margin-left: 20px;
+                        }
+                        .footer table td{
+                            padding: 10px;
+                        }
+                    </style>
+                        <a class="container a" href="" style="border-bottom: 1px solid white;">
+                            <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/coding.jpg?updatedAt=1679302752801" alt="coding">
+                            <p>Programmers</p>
+                        </a>
+                        <a class="container a" href="">
+                            <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/net.jpg?updatedAt=1679302752498" alt="network">
+                            <p>Networking Tech</p>
+                        </a>
+                </div>
+                <div class="split-third">
+                    <p class="fn-bold">Popular Tags</p>
+                    <table>
+                        <tr>
+                            <td>Nanography</td>
+                            <td>Networking</td>
+                            <td>Programmers</td>
+                        </tr>
+                        <tr>
+                            <td>Graphics</td>
+                            <td>Software</td>
+                            <td>Coding</td>
+                        </tr>
+                        <tr>
+                            <td>Engineering</td>
+                            <td>Web Design</td>
+                            <td>IT</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="designer text-center">
+                Powered by Softtronic East Africa
+            </div>
+        </div>
+    </main>
+    <script>
+        // Get all the elements with the "box" class
+        const boxes = document.querySelectorAll('.center');
+
+        function checkBoxes() {
+        // Loop through each box
+        boxes.forEach(box => {
+            // Get the top and bottom position of the box
+            const boxTop = box.getBoundingClientRect().top;
+            const boxBottom = box.getBoundingClientRect().bottom;
+
+            // Check if the box is in the viewport
+            if (boxTop < window.innerHeight && boxBottom >= 0) {
+            box.classList.add('show');
+            } else {
+            box.classList.remove('show');
+            }
+        });
+        }
+
+        // Call the checkBoxes function on page load and on scroll
+        window.addEventListener('load', checkBoxes);
+        window.addEventListener('scroll', checkBoxes);
+
+    </script>
+</body>
+</html>
