@@ -383,6 +383,11 @@
     
 </head>
 <body id="body">
+
+
+    
+
+
     <div class="hero section" id="home">
         <script type="text/babel">
             function Support() {
@@ -815,6 +820,59 @@
             </div>
         </div>
     </main>
+    <div class="Loading-container" id="loading">
+        <div class="bars-container">
+          <div class="column" id="col"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+      <script>
+        var col = document.querySelectorAll(".column");
+        var a = 0,b=255,i=0;
+        var red = 0, green = 50, blue = 100;
+    
+        setInterval(function(){
+            red++;
+            green++;
+            blue++;
+            if(i != col.length){
+              col[i].style.background = "linear-gradient(to top, rgb("+Math.floor(Math.random() *  red) + 1+","+(green+50)+","+(blue+50)+"), rgb("+red+","+(green-50)+","+Math.floor(Math.random() * blue) + 1+"))";
+              i++;
+            }
+            else{
+              i = 0;
+            }
+            if(red >= 255 ){
+                 red = 0;
+              }
+            if(green >= 255){
+              green = 50;
+            }
+            if(blue >= 255){
+              blue = 50;
+            }
+        
+        },20);
+      </script>
+    <script>
+        //function show loading before document opens
+        document.onreadystatechange = function(){
+            if(document.readyState !== "complete"){
+                document.querySelector("body").style.visibility = "hidden";
+                document.querySelector("#loading").style.visibility = "visible";
+                document.getElementById('body').classList.add("stop-scrolling");
+            }
+            else{
+                document.querySelector("#loading").style.display = "none";
+                document.querySelector("body").style.visibility = "visible";
+                document.getElementById('body').classList.remove("stop-scrolling");
+            }
+        };
+    </script>
     <script>
         // Get all the elements with the "box" class
         const boxes = document.querySelectorAll('.center');
