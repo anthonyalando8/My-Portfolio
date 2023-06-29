@@ -54,12 +54,6 @@
             color: rgb(241, 162, 14);
             text-decoration: 2px underline rgb(241, 162, 14);
         }
-        button{
-            cursor: pointer;
-        }
-        .a{
-            text-decoration: none;
-        }
         nav > span{
             padding-left: 10px;
             height: 60px;
@@ -89,14 +83,7 @@
             padding-right: 10px;
             display: none;
         }
-        .hamburger button{
-            background-color: transparent;
-            border: none;
-            font-size: 28px;
-        }
-        .nav-active{
-            left: 0%;
-        }
+       
         
         .float{
             float: left;
@@ -217,10 +204,6 @@
         .project-link img, .achieve-link img{
             width: 100%;
             height: 250px;
-        }
-        .stop-scrolling{
-            height: 100%;
-            overflow: hidden;
         }
         ul.social-profile{
             display: flex;
@@ -753,23 +736,16 @@
                 </div>
                 <div class="split-third">
                     <p class="fn-bold">Popular Tags</p>
-                    <table>
-                        <tr>
-                            <td>Nanography</td>
-                            <td>Networking</td>
-                            <td>Programmers</td>
-                        </tr>
-                        <tr>
-                            <td>Graphics</td>
-                            <td>Software</td>
-                            <td>Coding</td>
-                        </tr>
-                        <tr>
-                            <td>Engineering</td>
-                            <td>Web Design</td>
-                            <td>IT</td>
-                        </tr>
-                    </table>
+                    <div class="tagsContainer" id="tagsContainer"></div>
+                    <script>
+                        var tagsContainer = document.getElementById('tagsContainer');
+                        var tagsContent = "";
+                        const tags = ["Nanography","Networking","Programmers","Graphics","Software",'Coding',"Engineering","Web Design","IT"];
+                        tags.forEach(tag =>{
+                            tagsContent += `<span class="tag">${tag}</span>`;
+                        });
+                        tagsContainer.innerHTML = tagsContent;
+                    </script>
                 </div>
             </div>
             <div class="designer text-center">
@@ -777,83 +753,49 @@
             </div>
         </div>
     </main>
-
-    <div class="Loading-container" id="loading">
-        <div class="bars-container">
-          <div class="column" id="col"></div>
-          <div class="column"></div>
-          <div class="column"></div>
-          <div class="column"></div>
-          <div class="column"></div>
-          <div class="column"></div>
-        </div>
-      </div>
-    <script>
-        //function show loading before document opens
-        document.onreadystatechange = function(){
-            if(document.readyState !== "complete"){
-                document.querySelector("body").style.visibility = "hidden";
-                document.querySelector("#loading").style.visibility = "visible";
-                document.getElementById('body').classList.add("stop-scrolling");
-            }
-            else{
-                document.querySelector("#loading").style.display = "none";
-                document.querySelector("body").style.visibility = "visible";
-                document.getElementById('body').classList.remove("stop-scrolling");
-            }
-        };
-    </script>
     <script>
         // Get all the elements with the "box" class
         const boxes = document.querySelectorAll('.slide-in-anime-bottom');
 
-        function checkBoxes() {
-        // Loop through each box
-        boxes.forEach(box => {
-            // Get the top and bottom position of the box
-            const boxTop = box.getBoundingClientRect().top;
-            const boxBottom = box.getBoundingClientRect().bottom;
+        // function checkBoxes() {
+        // // Loop through each box
+        // boxes.forEach(box => {
+        //     // Get the top and bottom position of the box
+        //     const boxTop = box.getBoundingClientRect().top;
+        //     const boxBottom = box.getBoundingClientRect().bottom;
 
-            // Check if the box is in the viewport
-            if (boxTop < window.innerHeight && boxBottom >= 0) {
-                box.classList.add('show');
+        //     // Check if the box is in the viewport
+        //     if (boxTop < window.innerHeight && boxBottom >= 0) {
+        //         box.classList.add('show');
+        //     }
+        //     // else {
+        //     //     box.classList.remove('show');
+        //     // }
+        // });
+        // }
+
+            function isInViewPortAnime(ELEMENTCLASS, ANIMATION){
+                elements = document.querySelectorAll(ELEMENTCLASS);
+                elements.forEach(element =>{
+                    var elementTop = element.offsetTop;
+                    var elementBottom = elementTop + element.offsetHeight;
+                    var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var viewportBottom = viewportTop + window.innerHeight;
+                    if(elementBottom > viewportTop && elementTop < viewportBottom){
+                        element.classList.add(ANIMATION);
+                    }
+                });
             }
-            // else {
-            //     box.classList.remove('show');
-            // }
-        });
-        }
 
         // Call the checkBoxes function on page load and on scroll
-        window.addEventListener('load', checkBoxes);
-        window.addEventListener('scroll', checkBoxes);
+        window.addEventListener('load', function(){
+            isInViewPortAnime('.slide-in-anime-bottom', 'show')
+        });
+        window.addEventListener('scroll', function(){
+            isInViewPortAnime('.slide-in-anime-bottom', 'show')
+        });
 
-        var col = document.querySelectorAll(".column");
-        var a = 0,b=255,loop=0;
-        var red = 0, green = 50, blue = 100;
-    
-        setInterval(function(){
-            red++;
-            green++;
-            blue++;
-            if(loop != col.length){
-              col[loop].style.background = "linear-gradient(to top, rgb("+Math.floor(Math.random() *  red) + 1+","+(green+50)+","+(blue+50)+"), rgb("+red+","+(green-50)+","+Math.floor(Math.random() * blue) + 1+"))";
-              loop++;
-            }
-            else{
-              loop = 0;
-            }
-            if(red >= 255 ){
-                 red = 0;
-              }
-            if(green >= 255){
-              green = 50;
-            }
-            if(blue >= 255){
-              blue = 50;
-            }
         
-        },20);
 
         function createSlideShow() {
             var currentSlideIndex = 0;
