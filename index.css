@@ -49,7 +49,6 @@ button{
   padding: 10px;
 }
 .slide-in-anime-bottom {
-    margin: 0;
     opacity: 0;
     transform: translateY(30%);
     transition: opacity 0.3s ease-out, transform 0.3s ease-out;
@@ -79,7 +78,7 @@ button{
     background-color: aliceblue;
   }
   .section{
-    min-height: 700px;
+    min-height: 500px;
   }
   .full-width{
     width: 100%;
