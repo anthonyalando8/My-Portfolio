@@ -136,7 +136,7 @@ h1.head{
   flex-wrap: wrap;
 }
 .tag{
-  padding: 10px;
+  padding: 10px 10px 10px 0;
 }
 .designer{
   padding: 20px;
