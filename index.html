@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa">
+    <meta name="keywords" content="Omukuyia Anthony Alando, Anthony Alando, Omukuyia Portfolio, Softtronic East Africa, Soft connect">
     <link rel="shortcut icon" href="favicon.ico"/>
-    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
 
     <title>Anthony | Home</title>
     <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
@@ -17,13 +18,7 @@
     
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Orbitron:wght@900&display=swap');
-        body{
-            font-family: 'Open Sans', sans-serif;
-            padding: 0;
-            margin: 0;
-        }
+        
         header,nav{
             align-items: center;
             display: flex;
@@ -107,7 +102,6 @@
             float: left;
         }
         .hero{
-            
             background-repeat: no-repeat;
             background-size: 550px 550px;
             background-position: right;
@@ -148,7 +142,7 @@
         #content-btn > div > h1.frames >span{
             color: rgb(10, 11, 69);
             opacity: 0;
-            animation: blurInOut 3.0s  3s infinite linear;
+            animation: blurInOut 3s infinite linear;
         }
         @keyframes blurInOut{
             0%{
@@ -255,7 +249,8 @@
         .contact-section ul{
             padding: 15px;
         }
-        .projects img{
+        
+        #projects img{
             width: 100%;
             height: 400px;
         }
@@ -266,7 +261,7 @@
             width: 100%;
             transition: background-color 2s;
             background-color: whitesmoke;
-            box-shadow: 0 2.5px 2.5px rgb(167, 164, 164);
+            box-shadow: 0 1px 0px rgb(167, 164, 164);
             animation: height 1s 1 linear;
             overflow: hidden;
         }
@@ -383,11 +378,6 @@
     
 </head>
 <body id="body">
-
-
-    
-
-
     <div class="hero section" id="home">
         <script type="text/babel">
             function Support() {
@@ -445,7 +435,7 @@
       
       
         <header class="header">
-            <span>Welcome to my website</span>
+            <span>Grow with us</span>
             <ul class="social-links" id="header-social-links"></ul>
         </header>
         <script>
@@ -483,223 +473,191 @@
             }
         };
         </script>
-        <div class="section position-relative">
-            <div class="hero-content center position-absolute">
-                <div id="content-btn" class="float">
+        <div class="section slide-in-anime-bottom center-content">
+            <div class="hero-content full-width">
+                <div id="content-btn">
                 <div>
                     Hello, welcome user! I am<br /> <b> <span id="Fname">Omukuyia</span> <span id="Lname">Anthony</span> </b>
                     <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255)">experience.</span> </h1>
                     <h1 class="frames">I DO <span id="frames"></span></h1>
+
                     <script>
-                        const occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
-                        var occ_id = document.getElementById("frames");
+                        var occ = ["WEB DESIGN","WEB BACKEND","ANDROID APPS","NETWORKING", "SOFTWARE DEV", "FREELANCING"];
+                        const occ_id = document.getElementById("frames");
                         var i = 0;
-                        function changeContent() {         
-                        setTimeout(function() { 
-                            occ_id.innerHTML = occ[i];                    
-                            i++;                    
-                            if (i < occ.length) {           
-                                changeContent();             
-                            }
-                            else{
+                        occ_id.innerHTML = occ[i];
+                        setInterval(function(){
+                            i++;
+                            if(i >= occ.length){
                                 i = 0;
-                                changeContent();
                             }
-                            }, 3000)
-                        }
-                        changeContent();
+                            occ_id.innerHTML = occ[i];
+                        },3000);
+                        
                     </script>   
                 </div>
                     <div class="hero-btns">
-                        <button class="btn-transparent btn">Hire Me</button>
-                        <button class="btn-colored btn">Call Me</button>
+                        <button class="btn-transparent btn" onclick="window.location.href = 'contacts.html'">Hire Me</button>
+                        <button class="btn-colored btn" onclick="window.location.href = 'tel:+254700536326'">Call Me</button>
                     </div>   
                 </div>
             </div>
         </div>
-        
     </div>
     <main>
-        <div class="about full-width bg-aliceblue section" id="about">
-            <h1 class="head text-center">About</h1>
-            <div class="section position-relative ">
-                <div class="full-width section center position-absolute">
-                    <div class="container full-width display-flex">
-                        <div class="split-sixth text-center">
-                            <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
-                        </div>
-                        <div class="about-content slide-show-container split-forth">
-                            <section class="p">
-                                <h2>OMUKUYIA ANTHONY ALANDO</h2>
-                                <b style="color: rgb(109, 108, 108);">Web Designer, Android, Software Development</b><br />
-                                <button class="btn btn-colored" onclick=" window.open('https://anthonyalando8.github.io/softtronic-east-africa.github.io/','_blank')">Visit Company Web</button>
-                            </section>
-                            <div class="slide p" id="slide1">
-                                <b>Skills</b>
-                                <p>Hi, I'm Omukuyia Anthony, a IT expert with 4 years of experience in Web Design. 
-                                    I'm passionate about coding and have a proven track record of web designs.
-                                </p>
+        <div class="about center-content full-width bg-aliceblue section slide-in-anime-bottom" id="about">
+            <h1 class="head">About</h1>
+            <div class="container full-width display-flex ">
+                <div class="split-sixth text-center">
+                    <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
+                </div>
+                <div class="about-content slide-show-container split-forth">
+                    <section class="p">
+                        <h2>OMUKUYIA ANTHONY ALANDO</h2>
+                        <b style="color: rgb(109, 108, 108);">Web Designer, Android, Software Development</b><br />
+                        <button class="btn btn-colored" onclick=" window.open('https://anthonyalando8.github.io/softtronic-east-africa.github.io/','_blank')">Visit Company Web</button>
+                    </section>
+                    <div class="slide p" id="slide1">
+                        <b>Skills</b>
+                        <p>Hi, I'm Omukuyia Anthony, a IT expert with 4 years of experience in Web Design. 
+                            I'm passionate about coding and have a proven track record of web designs.
+                        </p>
 
-                                <p>After completing my degree at KU, I started my career at google. 
-                                    Since then, I've worked at several other companies, honing my skills in programming.
-                                </p>
-                            </div>
-                            <div class="slide p" id="slide2">
-                                <p>I specialize in data analysis, and have worked on projects ranging from web development, 
-                                    android development. Coding is indeed fun.
-                                </p>
-                                <p><b>Hobby</b><br />
-                                    Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
-                                    and learning new things from the books I read.
-                                </p>
-                            </div>
-                            <section class="p">
-                                <div id="Education">
-                                    <b>Education</b><br />
-                                    Primary School<br />
-                                    Secondary School<br />
-                                    Kenyatta University<br />
-                                </div>
-                                <ul class="social-profile">
-                                    <li>
-                                        <a class="a" href=""><i class="fa-brands fa-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="a" href=""><i class="fa-brands fa-github"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="a" href=""><i class="fa-brands fa-linkedin"></i></a>
-                                    </li>
-                                    <li>
-                                        <a class="a" href=""><i class="fa-brands fa-instagram"></i></a>
-                                    </li>
-                                </ul>
-                            </section>
-                            <script>
-                                function createSlideShow() {
-                                var currentSlideIndex = 0;
-                                var slides = document.querySelectorAll(".slide-show-container > div");
-
-                                function slideShow() {
-                                    slides[currentSlideIndex].style.display = "none";
-                                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-                                    slides[currentSlideIndex].style.display = "block";
-                                }
-
-                                slides[currentSlideIndex].style.display = "block";
-                                setInterval(slideShow, 10000); // change slide every 10 seconds
-                                }
-                                createSlideShow();
-                            </script>   
-                        </div>
+                        <p>After completing my degree at KU, I started my career at google. 
+                            Since then, I've worked at several other companies, honing my skills in programming.
+                        </p>
                     </div>
-                    <div class="skills"  style="margin:auto; width:95% ;">
-                        <p class="fn-bold text-center">Technical Skills</p>
-                        <!-- Progress bars / Skills -->
-                        <style>
-                            .sea-grey{
-                                background-color: rgb(167, 166, 166);
-                            }
-                            .sea-dark-grey{
-                                background-color: rgb(107, 107, 107);
-                                padding: 10px 0px;
-                            }
-                        </style>
-                        <h4>Programming</h4>
-                        <div class="sea-grey">
-                            <div class="sea-dark-grey " style="width:95%">95%</div>
-                        </div>
-                        <h4>Web Design</h4>
-                        <div class="sea-grey full-width">
-                            <div class="sea-dark-grey" style="width:85%">85%</div>
-                        </div>
-                        <h4>Graphics</h4>
-                        <div class="sea-grey full-width">
-                            <div class="sea-dark-grey" style="width:80%">80%</div>
-                        </div>
+                    <div class="slide p" id="slide2">
+                        <p>I specialize in data analysis, and have worked on projects ranging from web development, 
+                            android development. Coding is indeed fun. Happy coding my friend.
+                        </p>
+                        <p><b>Hobby</b><br />
+                            Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
+                            and learning new things from the books I read.
+                        </p>
                     </div>
-                </div> 
+                    <section class="p">
+                        <div id="Education">
+                            <b>Education</b><br />
+                            Primary School<br />
+                            Secondary School<br />
+                            Kenyatta University<br />
+                        </div>
+                        <ul class="social-profile">
+                            <li>
+                                <a class="a" href=""><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="a" href=""><i class="fa-brands fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a class="a" href=""><i class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                            <li>
+                                <a class="a" href=""><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                        </ul>
+                    </section>  
+                </div>
+            </div>
+            <div class="skills"  style="margin:auto; width:95% ;">
+                <p class="fn-bold text-center">Technical Skills</p>
+                <!-- Progress bars / Skills -->
+                <style>
+                    .sea-grey{
+                        background-color: rgb(167, 166, 166);
+                    }
+                    .sea-dark-grey{
+                        background-color: rgb(107, 107, 107);
+                        padding: 10px 0px;
+                    }
+                </style>
+                <h4>Programming</h4>
+                <div class="sea-grey">
+                    <div class="sea-dark-grey " style="width:95%">95%</div>
+                </div>
+                <h4>Web Design</h4>
+                <div class="sea-grey full-width">
+                    <div class="sea-dark-grey" style="width:85%">85%</div>
+                </div>
+                <h4>Graphics</h4>
+                <div class="sea-grey full-width">
+                    <div class="sea-dark-grey" style="width:80%">80%</div>
+                </div>
             </div>
         </div>
             
-        <div class="full-width section">
+        <div class="full-width section center-content slide-in-anime-bottom">
             <p class="e-bold">The foundation of quality work.</p>
-            <div class="section full-width position-relative">
-                <div class="container full-width center position-absolute display-flex">
-                    <div class="split-third project-link card">
-                        <a class="a"href="#projects">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/why-image-one_LJHoqpBgG?ik-sdk-version=javascript-1.4.3&updatedAt=1673535031874"alt="Softtronic project">
-                            </div>
-                            <p class="fn-bold p">Softtronic Projects.</p>
-                            <p class="p">Explore on our major projects in recent years.</p>
-                        </a>
-                    </div>
-                    <div class="split-third achieve-link card">
-                        <a class="a" href="">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/Softtronic/achievements_bmCWvtFre?ik-sdk-version=javascript-1.4.3&updatedAt=1673535579837"alt="Softtronic achieves">
-                            </div>
-                            <p class="p fn-bold">Achievements.</p>
-                            <p class="p">See why this organisation is trusted with over 500,000+ customer.</p>
-                        </a>
-                    </div>
-                    <div class="split-third achieve-link card">
-                        <a class="a" href="contacts.html#location">
-                            <div class="why-image p">
-                                <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/locate-icon_nuYcQjGgB?ik-sdk-version=javascript-1.4.3&updatedAt=1678355626605"alt="Softtronic achieves">
-                            </div>
-                            <p class="fn-bold p">Locate us</p>
-                            <p class="p">Let us do business</p>
-                        </a>
-                    </div>
+            <div class="container full-width  display-flex">
+                <div class="split-third project-link card">
+                    <a class="a"href="#projects">
+                        <div class="why-image p">
+                            <img src="https://ik.imagekit.io/anthonyalando/Softtronic/why-image-one_LJHoqpBgG?ik-sdk-version=javascript-1.4.3&updatedAt=1673535031874"alt="Softtronic project">
+                        </div>
+                        <p class="fn-bold p">Softtronic Projects.</p>
+                        <p class="p">Explore on our major projects in recent years.</p>
+                    </a>
+                </div>
+                <div class="split-third achieve-link card">
+                    <a class="a" href="">
+                        <div class="why-image p">
+                            <img src="https://ik.imagekit.io/anthonyalando/Softtronic/achievements_bmCWvtFre?ik-sdk-version=javascript-1.4.3&updatedAt=1673535579837"alt="Softtronic achieves">
+                        </div>
+                        <p class="p fn-bold">Achievements.</p>
+                        <p class="p">See why this organisation is trusted with over 500,000+ customer.</p>
+                    </a>
+                </div>
+                <div class="split-third achieve-link card">
+                    <a class="a" href="contacts.html#location">
+                        <div class="why-image p">
+                            <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/locate-icon_nuYcQjGgB?ik-sdk-version=javascript-1.4.3&updatedAt=1678355626605"alt="Softtronic achieves">
+                        </div>
+                        <p class="fn-bold p">Locate us</p>
+                        <p class="p">Let us do business</p>
+                    </a>
                 </div>
             </div>    
         </div> 
 
-        <div class="full-width section bg-aliceblue" id="projects">
-            <p class="e-bold text-center full-width"id="project-head" >Lets take a step a head, check our recent projects</p>
-            <div class="full-width section position-relative">
-                <div class="projects full-width center position-absolute">
-                    <div class="container full-width display-flex">
-                        <div class="split-third left card">
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
-                            
-                            <p class="fn-bold p">Android Chat Application</p>
-                            <p class="p">
-                                A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
-                                messages to each other, create groups, and share files securely in real-time.
-                            </p>
-                        </div>
-                        <div class="split-third middle card">
-                            <p class="fn-bold p">School Management System</p>
-                            <p class="p">
-                                A School Management System is a software application that manages administrative tasks 
-                                such as student enrollment, class schedules, attendance, grades, and communication with parents. 
-                                It streamlines school operations, improves collaboration, and enhances student performance.
-                            </p>
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
-                        </div>
-                        <div class="split-third right card">
-                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
-                            <p class="fn-bold p">Point of sale machine.</p>
-                            <p class="p">
-                                A POS (Point of Sale) system is a software application that manages sales transactions, 
-                                inventory, and customer data. It allows businesses to process payments and track sales in 
-                                real-time.
-                            </p>
-                        </div>
-                    </div>
+        <div class="full-width section center-content bg-aliceblue slide-in-anime-bottom" id="projects">
+            <p class="e-bold text-center full-width slide-left"id="project-head" >Lets take a step a head, check our recent projects</p>
+            <div class="container full-width display-flex">
+                <div class="split-third left card">
+                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
+                    
+                    <p class="fn-bold p">Android Chat Application</p>
+                    <p class="p">
+                        A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
+                        messages to each other, create groups, and share files securely in real-time.
+                    </p>
+                </div>
+                <div class="split-third middle card">
+                    <p class="fn-bold p">School Management System</p>
+                    <p class="p">
+                        A School Management System is a software application that manages administrative tasks 
+                        such as student enrollment, class schedules, attendance, grades, and communication with parents. 
+                        It streamlines school operations, improves collaboration, and enhances student performance.
+                    </p>
+                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
+                </div>
+                <div class="split-third right card">
+                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
+                    <p class="fn-bold p">Point of sale machine.</p>
+                    <p class="p">
+                        A POS (Point of Sale) system is a software application that manages sales transactions, 
+                        inventory, and customer data. It allows businesses to process payments and track sales in 
+                        real-time.
+                    </p>
                 </div>
             </div>
             
         </div>
 
-        <div class="contact-section section full-width">
+        <div class="contact-section center-content section slide-in-anime-bottom full-width">
             <h1 class="head text-center">Contact Us</h1>
             <p class="text-center">We are looking forward to hearing from you. Please select how we can help you below.</p>
-            <div class="position-relative section full-width">
-                <div class="container position-absolute center display-flex">
+                <div class="container  display-flex">
                     <div class="split-half container display-flex">
                         <div class="split-half card">
                             <div class="image">
@@ -744,8 +702,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div> 
+                </div> 
         </div> 
         <div class="footer">
             <div class="container full-width display-flex">
@@ -820,6 +777,7 @@
             </div>
         </div>
     </main>
+
     <div class="Loading-container" id="loading">
         <div class="bars-container">
           <div class="column" id="col"></div>
@@ -830,34 +788,6 @@
           <div class="column"></div>
         </div>
       </div>
-      <script>
-        var col = document.querySelectorAll(".column");
-        var a = 0,b=255,i=0;
-        var red = 0, green = 50, blue = 100;
-    
-        setInterval(function(){
-            red++;
-            green++;
-            blue++;
-            if(i != col.length){
-              col[i].style.background = "linear-gradient(to top, rgb("+Math.floor(Math.random() *  red) + 1+","+(green+50)+","+(blue+50)+"), rgb("+red+","+(green-50)+","+Math.floor(Math.random() * blue) + 1+"))";
-              i++;
-            }
-            else{
-              i = 0;
-            }
-            if(red >= 255 ){
-                 red = 0;
-              }
-            if(green >= 255){
-              green = 50;
-            }
-            if(blue >= 255){
-              blue = 50;
-            }
-        
-        },20);
-      </script>
     <script>
         //function show loading before document opens
         document.onreadystatechange = function(){
@@ -875,7 +805,7 @@
     </script>
     <script>
         // Get all the elements with the "box" class
-        const boxes = document.querySelectorAll('.center');
+        const boxes = document.querySelectorAll('.slide-in-anime-bottom');
 
         function checkBoxes() {
         // Loop through each box
@@ -886,10 +816,11 @@
 
             // Check if the box is in the viewport
             if (boxTop < window.innerHeight && boxBottom >= 0) {
-            box.classList.add('show');
-            } else {
-            box.classList.remove('show');
+                box.classList.add('show');
             }
+            // else {
+            //     box.classList.remove('show');
+            // }
         });
         }
 
@@ -897,6 +828,48 @@
         window.addEventListener('load', checkBoxes);
         window.addEventListener('scroll', checkBoxes);
 
+        var col = document.querySelectorAll(".column");
+        var a = 0,b=255,loop=0;
+        var red = 0, green = 50, blue = 100;
+    
+        setInterval(function(){
+            red++;
+            green++;
+            blue++;
+            if(loop != col.length){
+              col[loop].style.background = "linear-gradient(to top, rgb("+Math.floor(Math.random() *  red) + 1+","+(green+50)+","+(blue+50)+"), rgb("+red+","+(green-50)+","+Math.floor(Math.random() * blue) + 1+"))";
+              loop++;
+            }
+            else{
+              loop = 0;
+            }
+            if(red >= 255 ){
+                 red = 0;
+              }
+            if(green >= 255){
+              green = 50;
+            }
+            if(blue >= 255){
+              blue = 50;
+            }
+        
+        },20);
+
+        function createSlideShow() {
+            var currentSlideIndex = 0;
+            var slides = document.querySelectorAll(".slide-show-container > div");
+
+            function slideShow() {
+                slides[currentSlideIndex].style.display = "none";
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                slides[currentSlideIndex].style.display = "block";
+            }
+
+            slides[currentSlideIndex].style.display = "block";
+            setInterval(slideShow, 10000); // change slide every 10 seconds
+        }
+        createSlideShow();
+        
     </script>
 </body>
 </html>
