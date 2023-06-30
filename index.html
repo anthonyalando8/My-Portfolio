@@ -83,11 +83,6 @@
             padding-right: 10px;
             display: none;
         }
-       
-        
-        .float{
-            float: left;
-        }
         .hero{
             background-repeat: no-repeat;
             background-size: 550px 550px;
@@ -109,17 +104,9 @@
         #Fname{
             color: blue;
         }
-        #content-btn{
-            padding-top: 100px;
-            padding-left: 50px;
-        }
         #content-btn > div{
             font-size: 18px;
         }
-        #content-btn > div > h1{
-               font-size: 24px;
-               word-spacing: 5px;
-         }
         #content-btn .frames{
             text-transform: capitalize;
             font-size: 36px;
@@ -156,22 +143,10 @@
             padding: 10px;
             width: 250px;
             font-size: 18px;
-            border-radius: 5px;
             border: none;
-            letter-spacing: 1px;
         }
         .hero-btns{
-           justify-content: space-between;
-           align-items: center;
            margin-top: 20px;
-        }
-        .btn-transparent{
-            background-color: transparent;
-            border: 1px solid rgb(218, 207, 207);
-        }
-        .btn-colored{
-            background-color: rgb(241, 162, 14);
-            color: white;
         }
         .about-content{
             padding: 10px;
@@ -179,16 +154,9 @@
         .about-content .btn{
             margin-top: 20px;
             padding: 10px;
-            width: 310px;
-        }
-        .e-bold{
-            width: 100%;
-            text-align: center;
         }
         .about img{
             width: 50%;
-            height: 70%;
-            margin: 50px auto;
         }
         .slide-show-container > div{
             line-height: 1.5;
@@ -196,7 +164,7 @@
         }
         @keyframes ch-opacity{
             0%{opacity: 0;}
-            100%{opacity: 1.0;}
+            100%{opacity: 1;}
         }
         .slide-show-container > div:not(:first-child) {
             display: none;
@@ -225,13 +193,10 @@
             width: 100%;
             text-align: center;
         }
-        .contact-section ul{
-            padding: 15px;
-        }
         
         #projects img{
             width: 100%;
-            height: 400px;
+            max-height: 400px;
         }
         .sticky{
             position: fixed!important;
@@ -296,7 +261,6 @@
             .nav-bar ul.nav-links li.contacts:hover > ul.contact-links{
                 display: initial;
             }
-            
             .hamburger{
                 display: initial;
             }
@@ -388,7 +352,7 @@
 
     <div class="hero" id="home">
         <div class="section slide-in-anime-bottom ">
-            <div class="hero-content full-width">
+            <div class="hero-content center-container full-width">
                 <div id="content-btn">
                 <div>
                     Hello, welcome user! I am<br /> <b> <span id="Fname">Omukuyia</span> <span id="Lname">Anthony</span> </b>
@@ -422,7 +386,7 @@
         <div class="about center-content full-width bg-aliceblue section slide-in-anime-bottom" id="about">
             <h1 class="head">About</h1>
             <div class="container full-width display-flex ">
-                <div class="split-sixth text-center">
+                <div class="split-sixth text-center center-content">
                     <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
                 </div>
                 <div class="about-content slide-show-container split-forth">

@@ -16,6 +16,15 @@ main{
 }
 button{
   cursor: pointer;
+  border-radius: 5px;
+}
+.btn-transparent{
+  background-color: transparent;
+  border: 1px solid rgb(218, 207, 207);
+}
+.btn-colored{
+  background-color: rgb(241, 162, 14);
+  color: white;
 }
 .a{
   text-decoration: none;
@@ -120,8 +129,11 @@ h1.head{
 .card:hover{
   transform: translate(0px,5px);
   transform: scale(1.01);
-  transition: transform 0.5s;
-  box-shadow: 0 10px 15px rgb(213, 212, 212);
+  transition: 0.5s;
+  background-color: blue;
+}
+.card:hover *{
+  color: white;
 }
 .footer *{
   background-color: #2a2a2a;
