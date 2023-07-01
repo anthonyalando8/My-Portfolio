@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
+    <script type="module" src="module-fn.js"></script>
+
 
     <title>Anthony | Home</title>
     <script src="https://kit.fontawesome.com/3695de9773.js" crossorigin="anonymous"></script>
@@ -204,7 +206,7 @@
             width: 100%;
             top: 0%;
             transition: background-color 1s;
-            background-color: whitesmoke;
+            background-color: rgba(240, 248, 255, 0.9);
             box-shadow: 0 1px 0px rgb(167, 164, 164);
             animation: slideIn 1s 1;
             overflow: hidden;
@@ -323,6 +325,9 @@
                 height: auto;
                 margin: 50px auto;
             }
+            .names{
+                justify-content: center;
+            }
         }
     </style>
     
@@ -355,7 +360,11 @@
             <div class="hero-content center-container full-width">
                 <div id="content-btn">
                 <div>
-                    Hello, welcome user! I am<br /> <b> <span id="Fname">Omukuyia</span> <span id="Lname">Anthony</span> </b>
+                    <div>Hello, welcome user! I am</div>
+                    <div class="flex-wrap names">
+                        <div id="Fname" class="slide-in-anime-left"><b>Omukuyia</b></div> 
+                        <div id="Lname" class="slide-in-anime-right"><b>Anthony</b></div> 
+                    </div>
                     <h1>Building digital products, brands and <span style="color: rgb(157, 0, 255)">experience.</span> </h1>
                     <h1 class="frames">I DO <span id="frames"></span></h1>
 
@@ -385,11 +394,11 @@
     <main>
         <div class="about center-content full-width bg-aliceblue section slide-in-anime-bottom" id="about">
             <h1 class="head">About</h1>
-            <div class="container full-width display-flex ">
-                <div class="split-sixth text-center center-content">
+            <div class="container full-width display-flex">
+                <div class="split-sixth text-center center-content slide-in-anime-left">
                     <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/anthony_png.png?ik-sdk-version=javascript-1.4.3&updatedAt=1678260761600" alt="anthony">
                 </div>
-                <div class="about-content slide-show-container split-forth">
+                <div class="about-content slide-show-container split-forth slide-in-anime-right">
                     <section class="p">
                         <h2>OMUKUYIA ANTHONY ALANDO</h2>
                         <b style="color: rgb(109, 108, 108);">Web Designer, Android, Software Development</b><br />
@@ -628,7 +637,7 @@
                 </div>
                 <div class="split-third">
                     <p class="fn-bold">Popular Tags</p>
-                    <div class="tagsContainer" id="tagsContainer"></div>
+                    <div class="flex-wrap" id="tagsContainer"></div>
                     <script>
                         var tagsContainer = document.getElementById('tagsContainer');
                         var tagsContent = "";
@@ -645,29 +654,19 @@
             </div>
         </div>
     </main>
-    <script>
-        // Get all the elements with the "box" class
-        const boxes = document.querySelectorAll('.slide-in-anime-bottom');
-
-            function isInViewPortAnime(ELEMENTCLASS, ANIMATION){
-                elements = document.querySelectorAll(ELEMENTCLASS);
-                elements.forEach(element =>{
-                    var elementTop = element.offsetTop;
-                    var elementBottom = elementTop + element.offsetHeight;
-                    var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
-                    var viewportBottom = viewportTop + window.innerHeight;
-                    if(elementBottom > viewportTop && elementTop < viewportBottom){
-                        element.classList.add(ANIMATION);
-                    }
-                });
-            }
+    <script type="module">
+        import {isInViewPortAnime} from './module-fn.js';
 
         // Call the checkBoxes function on page load and on scroll
         window.addEventListener('load', function(){
-            isInViewPortAnime('.slide-in-anime-bottom', 'show');
+            isInViewPortAnime('.slide-in-anime-bottom', 'show', 0);
+            isInViewPortAnime('.slide-in-anime-left', 'show', 500);
+            isInViewPortAnime('.slide-in-anime-right', 'show', 500);
         });
         window.addEventListener('scroll', function(){
-            isInViewPortAnime('.slide-in-anime-bottom', 'show');
+            isInViewPortAnime('.slide-in-anime-bottom', 'show', 0);
+            isInViewPortAnime('.slide-in-anime-left', 'show', 500);
+            isInViewPortAnime('.slide-in-anime-right', 'show', 500);
 
             var navbar = document.getElementById("nav-bar");
             var sticky = navbar.offsetTop;
@@ -678,7 +677,6 @@
             }
         });
 
-        
 
         function createSlideShow() {
             var currentSlideIndex = 0;
