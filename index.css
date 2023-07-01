@@ -237,7 +237,7 @@ h1.head{
   
 }
 @media screen and (max-width: 650px) {
-  .container.display-flex{
+  .display-flex{
     display: inline-block!important;
   }
   .display-flex .split-half,.display-flex .split-forth,.display-flex .split-sixth,.display-flex .split-third, .display-flex .split-fifth,.display-flex .split-eighth{
