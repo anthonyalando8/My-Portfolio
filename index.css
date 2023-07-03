@@ -20,7 +20,7 @@ button{
 }
 .btn-transparent{
   background-color: transparent;
-  border: 1px solid rgb(218, 207, 207);
+  border: 1px solid rgb(218, 207, 207)!important;
 }
 .btn-colored{
   background-color: rgb(241, 162, 14);
@@ -58,6 +58,10 @@ button{
 .p{
   padding: 10px;
 }
+
+p{
+  line-height: 2;
+}
 .slide-in-anime-bottom {
     opacity: 0;
     transform: translateY(30%);
@@ -75,6 +79,10 @@ button{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.align-horizontally{
+  justify-content: center;
+  display: flex;
 }
 .slide-in-anime-bottom.show {
   opacity: 1;
@@ -101,6 +109,16 @@ button{
   -ms-transform: translate(0%);
   transform: translate(0%);
 }
+.zoom-out-anime{
+  transform: scale(1.2);
+  opacity: 0;
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+.zoom-out-anime.show{
+  opacity: 1;
+  transform: scale(1.0);
+  -ms-transform: scale(1.0);
+}
   .text-center{
     text-align: center;
   }
@@ -109,6 +127,11 @@ button{
   }
   .section{
     min-height: 500px;
+    padding: 50px 0;
+    overflow: hidden;
+  }
+  .position-fixed{
+    position: fixed;
   }
   .full-width{
     width: 100%;
@@ -178,10 +201,6 @@ h1.head{
   color: white;
   background-color: black;
 }
-
-/* .slide-left{
-  transform: translate();
-} */
 .slide-left-anime{
   transform: translate(-100%);
 }
@@ -249,16 +268,6 @@ h1.head{
   }
   .e-bold{
     font-size: 24px;
-  }
-  .position-absolute{
-    position: static!important;
-  }
-  .position-relative{
-    position: static!important;
-  }
-  .center.show {
-    -ms-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
   }
   .card{
     margin: 10px 0;

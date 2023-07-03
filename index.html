@@ -195,7 +195,6 @@
             width: 100%;
             text-align: center;
         }
-        
         #projects img{
             width: 100%;
             max-height: 400px;
@@ -222,6 +221,9 @@
         }
         .sticky + div{
             margin-top: 50px!important;
+        }
+        #sticky-future.position-fixed + div{
+            margin-left: 50%;
         }
         @media screen and (max-width: 800px) {
             header{
@@ -329,6 +331,12 @@
             .names{
                 justify-content: center;
             }
+            #sticky-future.position-fixed{
+                position: initial;
+            }
+            #sticky-future.position-fixed + div{
+                margin-left: initial;
+            }
         }
     </style>
     
@@ -385,8 +393,8 @@
                     </script>   
                 </div>
                     <div class="hero-btns">
-                        <button class="btn-transparent btn" onclick="window.location.href = 'contacts.html'">Hire Me</button>
-                        <button class="btn-colored btn" onclick="window.location.href = 'tel:+254700536326'">Call Me</button>
+                        <button class="btn-transparent btn slide-in-anime-left" onclick="window.location.href = 'contacts.html'">Hire Me</button>
+                        <button class="btn-colored btn slide-in-anime-left" onclick="window.location.href = 'tel:+254700536326'">Call Me</button>
                     </div>   
                 </div>
             </div>
@@ -416,10 +424,11 @@
                         </p>
                     </div>
                     <div class="slide p" id="slide2">
+                        <b>Hobby</b>
                         <p>I specialize in data analysis, and I have worked on different projects ranging from web development, 
                             ios & android development. Coding is indeed fun. Happy coding my friend.
                         </p>
-                        <p><b>Hobby</b><br />
+                        <p>
                             Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
                             and learning new things from the books I read. Is a great skill to try.
                         </p>
@@ -508,36 +517,50 @@
             </div>    
         </div> 
 
-        <div class="full-width section center-content bg-aliceblue slide-in-anime-bottom" id="projects">
-            <p class="e-bold text-center full-width slide-left"id="project-head" >Lets take a step a head, check our recent projects</p>
+        <div class="full-width section bg-aliceblue " id="projects">
             <div class="container full-width display-flex">
-                <div class="split-third left card">
-                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
+                <div class="split-half align-horizontally" id="sticky-future">
+                    <div class="split-eighth">
+                        <div class="e-bold center-content">
+                            Design. Branding. Coding. <br /> I handle all.
+                        </div>
+                        <p>​Anthony specializes in Branding, Presentation Design and Web Design for companies and startups in the Africa. He is passionate about good user interface and clean, simple design principles.</p>
+                        <p>Anthony is an accomplished web designer in Kenya, focused on crafting user experiences that are designed to engage, convert and delight.</p>
+                    </div>
+                </div>
+                <div class="split-half align-horizontally">
+                    <div class="split-eighth center-content">
+                        <div class="card zoom-out-anime">
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/mobile_5r_KxU5o8?ik-sdk-version=javascript-1.4.3&updatedAt=1678355777451" alt="mobile"></div>
+                            
+                            <p class="fn-bold p">Android Chat Application</p>
+                            <p class="p">
+                                A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
+                                messages to each other, create groups, and share files securely in real-time.
+                            </p>
+                        </div>
+                        <div class="card zoom-out-anime">
+                            <p class="fn-bold p">School Management System</p>
+                            <p class="p">
+                                A School Management System is a software application that manages administrative tasks 
+                                such as student enrollment, class schedules, attendance, grades, and communication with parents. 
+                                It streamlines school operations, improves collaboration, and enhances student performance.
+                            </p>
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
+                        </div>
+                        <div class="card zoom-out-anime">
+                            <p class="fn-bold p">Point of sale machine.</p>
+                            <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
+                            <p class="p">
+                                A POS (Point of Sale) system is a software application that manages sales transactions, 
+                                inventory, and customer data. It allows businesses to process payments and track sales in 
+                                real-time.
+                            </p>
+                        </div>
+                    </div>
                     
-                    <p class="fn-bold p">Android Chat Application</p>
-                    <p class="p">
-                        A chat app project is a messaging platform that allows users to send text, voice, and multimedia 
-                        messages to each other, create groups, and share files securely in real-time.
-                    </p>
                 </div>
-                <div class="split-third middle card">
-                    <p class="fn-bold p">School Management System</p>
-                    <p class="p">
-                        A School Management System is a software application that manages administrative tasks 
-                        such as student enrollment, class schedules, attendance, grades, and communication with parents. 
-                        It streamlines school operations, improves collaboration, and enhances student performance.
-                    </p>
-                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
-                </div>
-                <div class="split-third right card">
-                    <p class="fn-bold p">Point of sale machine.</p>
-                    <div class="project-image p"><img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
-                    <p class="p">
-                        A POS (Point of Sale) system is a software application that manages sales transactions, 
-                        inventory, and customer data. It allows businesses to process payments and track sales in 
-                        real-time.
-                    </p>
-                </div>
+                
             </div>
             
         </div>
@@ -657,17 +680,21 @@
     </main>
     <script type="module">
         import {isInViewPortAnime} from './module-fn.js';
+        import {getDistanceFromTop} from './module-fn.js';
 
         // Call the checkBoxes function on page load and on scroll
         window.addEventListener('load', function(){
             isInViewPortAnime('.slide-in-anime-bottom', 'show', 0);
             isInViewPortAnime('.slide-in-anime-left', 'show', 500);
             isInViewPortAnime('.slide-in-anime-right', 'show', 500);
+            isInViewPortAnime('.zoom-out-anime', 'show', 500);
         });
         window.addEventListener('scroll', function(){
             isInViewPortAnime('.slide-in-anime-bottom', 'show', 0);
             isInViewPortAnime('.slide-in-anime-left', 'show', 500);
             isInViewPortAnime('.slide-in-anime-right', 'show', 500);
+            isInViewPortAnime('.zoom-out-anime', 'show', 500);
+
 
             var navbar = document.getElementById("nav-bar");
             var sticky = navbar.offsetTop;
@@ -675,6 +702,23 @@
                     navbar.classList.add("sticky");
             } else {
                     navbar.classList.remove("sticky");
+            }
+
+            var projectContainer = document.getElementById('projects');
+            var stickyFuture = document.getElementById('sticky-future');
+            var elementTop = projectContainer.offsetTop;
+            var elementBottom = elementTop + projectContainer.offsetHeight;
+            var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
+            var viewportBottom = viewportTop + window.innerHeight;
+            if(window.pageYOffset + navbar.clientHeight > projectContainer.offsetTop){
+                stickyFuture.classList.add('position-fixed');
+                stickyFuture.style.top = (navbar.clientHeight + 50) + 'px';
+            }else{
+                stickyFuture.classList.remove('position-fixed');
+            }
+            //console.log(getDistanceFromTop(document.getElementById('projects')));
+            if(viewportBottom > elementBottom){
+                stickyFuture.classList.remove('position-fixed');
             }
         });
 

@@ -12,3 +12,9 @@ export function isInViewPortAnime(elementClass, animationClass, animationDelay){
         }
     });
 }
+
+export function getDistanceFromTop(elementID){
+    const rect = elementID.getBoundingClientRect();
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    return rect.top + scrollTop - rect.height;
+}
