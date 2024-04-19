@@ -7,8 +7,8 @@
     /*font-family: 'Inconsolata', monospace; */
   }
 
-body{
-  font-size: 14px;
+body {
+  font-size: 18px;
 }
 .a{
 text-decoration: none;
@@ -20,8 +20,7 @@ text-decoration: none;
   background-color: aliceblue;
 }
 .section{
-  min-height: 700px;
-  overflow: hidden;
+ overflow: hidden;
 }
 .e-bold{
   font-size: 48px;
