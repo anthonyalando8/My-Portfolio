@@ -33,7 +33,11 @@ for(let i = 0; i < 5; i++){
     bar.classList.add('m-1');
     bar.style.width = '8px';
     bar.classList.add('bg-warning');
-    bar.classList.add('bar')
+    bar.classList.add('bar');
+    bar.classList.add('border');
+    bar.classList.add('border-1');
+    bar.classList.add('border-dark');
+    bar.classList.add('rounded-pill');
     
     animeContainer.appendChild(bar);
     var randomNumber = Math.floor(Math.random() * (1001 - 200)) + 200;

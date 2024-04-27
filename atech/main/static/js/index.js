@@ -35,7 +35,7 @@ for(let i = 0; i < 5; i++){
     bar.classList.add('bg-warning');
     bar.classList.add('bar');
     bar.classList.add('border');
-    bar.classList.add('border-2');
+    bar.classList.add('border-1');
     bar.classList.add('border-dark');
     bar.classList.add('rounded-pill');
     
