@@ -33,11 +33,14 @@ for(let i = 0; i < 5; i++){
     bar.classList.add('m-1');
     bar.style.width = '8px';
     bar.classList.add('bg-warning');
-    bar.classList.add('bar')
+    bar.classList.add('bar');
+    bar.classList.add('border');
+    bar.classList.add('border-primary');
+    bar.classList.add('rounded-pill');
     
     animeContainer.appendChild(bar);
     var randomNumber = Math.floor(Math.random() * (1001 - 200)) + 200;
-    animateBarWithDelay(bar, i * 180, randomNumber);
+    animateBarWithDelay(bar, i * 200, randomNumber);
 }
 function animateBarWithDelay(bar, delay, duration) {
     setTimeout(function() {
@@ -76,7 +79,7 @@ setInterval(function(){
 
 },20);
 document.onreadystatechange = function(){
-    if(document.readyState !== "complete"){
+    if(document.readyState == "complete"){
         $('#staticBackdrop').modal('show');
     }
     else{
