@@ -39,6 +39,40 @@
         .slide-show-container > div:not(:first-child) {
             display: none;
         }
+        .featurette-divider {
+        margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+        }
+
+        /* Thin out the marketing headings */
+        .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        /* rtl:remove */
+        letter-spacing: -.05rem;
+        }
+
+
+        /* RESPONSIVE CSS
+        -------------------------------------------------- */
+
+        @media (min-width: 40em) {
+        /* Bump up size of carousel content */
+        .carousel-caption p {
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+
+        .featurette-heading {
+            font-size: 50px;
+        }
+        }
+
+        @media (min-width: 62em) {
+        .featurette-heading {
+            margin-top: 7rem;
+        }
+        }
         
         @media screen and (max-width: 800px) {
              
@@ -48,6 +82,7 @@
              }
             
         }
+        
     </style>
     
 </head>
@@ -140,11 +175,6 @@
                 </div>
                 <div class="col-md-10 mx-auto slide-in-from-bottom ">
                     <div id="carouselHome" class="carousel carousel-dark slide" data-bs-ride="carousel" style="max-height: 700px;">
-                        <!-- <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselHome" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div> -->
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="row">
@@ -173,11 +203,11 @@
                             </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-md text-muted d-flex justify-content-center align-items-center mx-auto" style="max-width: 450px;">
+                                <div class="col-md order-md-2 text-muted d-flex justify-content-center align-items-center mx-auto" style="max-width: 450px;">
                                     <!-- <i class="fa-solid fa-server fa-10x"></i> -->
                                     <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/android.png?updatedAt=1714239112756" class="img-fluid">
                                 </div>
-                                <div class="col-md  text-light d-flex flex-column justify-content-center align-items-center">
+                                <div class="col-md order-md-1 text-light d-flex flex-column justify-content-center align-items-center">
                                     <div class="mt-3">
                                         <h4>Android Developer</h2>
                                     </div>
@@ -198,11 +228,11 @@
                         </div>
                         <div class="carousel-item">
                             <div class="row">
-                                <div class="col-md text-muted d-flex justify-content-center align-items-center mx-auto" style="max-width: 450px;">
+                                <div class="col-md  text-muted d-flex justify-content-center align-items-center mx-auto" style="max-width: 450px;">
                                     <!-- <i class="fa-solid fa-database fa-10x"></i>                                 -->
                                     <img src="https://ik.imagekit.io/anthonyalando/My_Portfolio/software.png?updatedAt=1714239112595" class="img-fluid">
                                 </div>
-                                <div class="col-md text-light d-flex flex-column justify-content-center align-items-center">
+                                <div class="col-md  text-light d-flex flex-column justify-content-center align-items-center">
                                     <div class="mt-3">
                                         <h4>Software Developer</h2>
                                     </div>
@@ -267,7 +297,7 @@
                 <div class="mt-2 p-1" id="slide2">
                     <b>Hobby</b>
                     <p>I specialize as a Backend Developer, and I have worked on different projects ranging from web development, 
-                        ios & android development. Coding is indeed fun. Happy coding my friend.
+                        ios & android development. Happy coding my friend.
                     </p>
                     <p>
                         Reading books: Reading books is one of my favorite hobbies. I love getting lost in a good story 
@@ -302,7 +332,7 @@
 
         <div class="bg-aliceblue row" id="projects">
             
-            <div class="col-md-12 d-flex justify-content-center flex-column align-items-center " >
+            <div class="col-12 col-md-10 col-lg-8 mx-auto d-flex justify-content-center flex-column align-items-center " >
                 <div class="h1 text-center">
                     Featured Projects
                 </div>
@@ -310,45 +340,33 @@
                 <p class="text-center lead">I bring a wealth of experience to the table. Here are some highlights of my top projects:</p>
             </div>
                 
-             
-            <div class="zoom-out-anime row min-vh-100" >
-                <div id="carouselProjectSoftconnect" class="carousel slide carousel-fade col-md d-flex justify-content-center flex-column align-items-center" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="5000">
-                        <img src="https://ik.imagekit.io/anthonyalando/Soft_Connect/soft%20connect%20chat.png?updatedAt=1714816779536" class="d-block w-100" alt="Soft Connect AI Chat">
-                      </div>
-                      <div class="carousel-item" data-bs-interval="5000">
-                        <img src="https://ik.imagekit.io/anthonyalando/Soft_Connect/softconnect.png?updatedAt=1713935791845" class="d-block w-100" alt="Soft Connect AI">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjectSoftconnect" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselProjectSoftconnect" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading">
+                    Soft Connect. <span class="text-muted">AI Powered.</span>
+                </h2>
+                  <p class="lead">
+                    Soft Connect is an AI-powered interactive chat application that provides users with personalized conversational experiences and intelligent responses to inquiries, enhancing engagement and efficiency in communication. It’s akin to GPT (Generative Pre-trained Transformer) and aims to offer instant responses through natural language understanding and generation.
+                  </p>
+                  <p>
+                    <a href="anthony001.pythonanywhere.com" class="btn btn-outline-success ps-2 pe-2" target="_blank">Learn More</a>
+                </p>
                 </div>
-                <div class="col-md d-flex justify-content-center flex-column align-items-center">
-                    <p class="fn-bold p">Soft Connect: AI Powered</p>
-                    <p class="p">
-                        Soft Connect is an AI-powered interactive chat application that provides users with personalized conversational 
-                        experiences and intelligent responses to inquiries, enhancing engagement and efficiency in communication. 
-                        It’s akin to GPT (Generative Pre-trained Transformer) and aims to offer instant responses through natural language 
-                        understanding and generation.
-                    </p>
-                    <p>
-                        <a href="anthony001.pythonanywhere.com" class="btn btn-outline-success ps-2 pe-2" target="_blank">Learn More</a>
-                    </p>
+                <div class="col-md-5">
+                    <!--  -->
+                    <div>
+                        <img src="https://ik.imagekit.io/anthonyalando/Soft_Connect/SOFTCHAT.png?updatedAt=1713881652505" class="img-fluid rounded">
+                    </div>               
                 </div>
-                
             </div>
-            <div class="zoom-out-anime row min-vh-100" >
-                <div class="col-md d-flex justify-content-center flex-column align-items-center">
-                    <p class="fn-bold p-2">School Management System</p>
-                    <p class="p-2">
-                        A School Management System is a software application that manages administrative tasks 
+            
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                  <h2 class="featurette-heading">Software. <span class="text-muted">School Management System.</span></h2>
+                  <p class="lead">
+                    A School Management System is a software application that manages administrative tasks 
                         such as student enrollment, class schedules, attendance, grades, and communication with parents. 
                         It streamlines school operations, improves collaboration, and enhances student performance.
                     </p>
@@ -356,61 +374,77 @@
                         <a href="" class="btn btn-outline-success ps-2 pe-2" target="_blank">Learn More</a>
                     </p>
                 </div>
-                <div class="col-md d-flex justify-content-center flex-column align-items-center">
+                <div class="col-md-5 order-md-1">
                     <div class=""><img class="img-fluid rounded mx-auto d-block" src="https://ik.imagekit.io/anthonyalando/My_Portfolio/sch-pro_WxrL_Bc89?ik-sdk-version=javascript-1.4.3&updatedAt=1678365825165" alt="school"></div>
+          
                 </div>
-                
-            </div>
-            <div class="zoom-out-anime row min-vh-100">
-                <div class="col-md d-flex justify-content-center flex-column align-items-center">
-                    <div class=""><img class="img-fluid rounded mx-auto d-block" src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
-                </div>
-                <div class="col-md d-flex justify-content-center flex-column align-items-center">
-                    <p class="fn-bold p">Point of sale machine.</p>
-                    <p class="p-2">
-                        A POS (Point of Sale) system is a software application that manages sales transactions, 
+              </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-7">
+                  <h2 class="featurette-heading">
+                    Software. <span class="text-muted">Point of sale.</span>
+                </h2>
+                  <p class="lead">
+                    A POS (Point of Sale) system is a software application that manages sales transactions, 
                         inventory, and customer data. It allows businesses to process payments and track sales in 
                         real-time.
-                    </p>
-                    <p>
-                        <a href="" class="btn btn-outline-success ps-2 pe-2" target="_blank">Learn More</a>
-                    </p>
+                  </p>
+                  <p>
+                    <a href="" class="btn btn-outline-success ps-2 pe-2" target="_blank">Learn More</a>
+                </p>
                 </div>
-                
+                <div class="col-md-5">
+                    <div class=""><img class="img-fluid rounded mx-auto d-block" src="https://ik.imagekit.io/anthonyalando/My_Portfolio/pos-pro_hNP8pGwkL?ik-sdk-version=javascript-1.4.3&updatedAt=1678365933502" alt="pos"></div>
+                </div>
             </div>
-            
+            <hr class="featurette-divider">
+
         </div>
 
         <div class="section slide-in-anime-bottom bg-aliceblue row min-vh-100" >
-            <h1 class="text-center">Contact Us</h1>
-            <div class="form m-2 col-md-12">
-                <p class="pt-2 pb-2">
-                    Please do not provide sensitive personal information, such as your social security number, address, telephone number, or checking or savings account numbers in an email as it may not necessarily be secure against interception. 
+            <div class="container px-4 py-5 ">
+                <div class="row align-items-center p-4  pe-lg-0 pt-lg-5 rounded-3 border shadow-lg">
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <h1 class="display-5 fw-bold lh-1 mb-3">Contact Us: Send us a message.</h1>
+                        <p class="col-lg-10 lead">
+                            Please do not provide sensitive personal information, such as your social security number, address, telephone number, or checking or savings account numbers in an email as it may not necessarily be secure against interception. 
                     If you need to provide sensitive information , please contact us directly at +254700536326
-                </p>
-                <form class="row ">
-                    <div class="col-md-6">
-                        <label for="f_name" class="form-label col-form-label-sm">First Name</label>
-                        <input type="text" class="form-control form-control-lg" aria-label="First name" required name="f_name" id="f_name">
+                        </p>
                     </div>
-                    <div class="col-md-6">
-                        <label for="l_name" class="form-label col-form-label-sm">Last Name</label>
-                        <input type="text" class="form-control form-control-lg" aria-label="Last name" name="l_name" id="l_name">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="inputEmail" class="form-label col-form-label-sm">Email</label>
-                        <input type="email" class="form-control form-control-lg" id="inputEmail">
-                    </div>
+                    <div class="col-md-10 mx-auto col-lg-5">
+                        <form class="p-2 p-md-5 border rounded-3 bg-light position-relative" method="post" id="form-message">
+                            <div class="alert alert-danger" role="alert">
+                                Login to send message!
+                            </div>
+                            <div class="position-absolute top-0 start-50 translate-middle-x"  id="message_response"></div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" name="user_email" placeholder="name@example.com" required>
+                                <label for="floatingInput">Email address</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingName" name="user_name" placeholder="full name" required>
+                                <label for="floatingName">Full Name</label>
+                            </div>
+                            <div class=" mb-3">
+                                <label for="floatingMessage" class="mx-1">Message</label>
 
-                    <div class="mb-3 col-md-12">
-                        <label for="message" class="form-label col-form-label-sm">Message</label>
-                        <textarea class="form-control form-control-lg" id="message" name="message" rows="3"></textarea>
+                                <textarea class="form-control" id="floatingMessage" name="message_body" style="height: 100px; resize: none;" required></textarea>
+                            </div>
+                            <div class="checkbox mb-3">
+                                <label>
+                                <input type="checkbox" value="True" name="is_urgent"> Agree terms and condition
+                                </label>
+                            </div>
+                            <input type="text" hidden value="send_message" name="send_message">
+                            <button class="w-100 btn btn-lg btn-primary" type="submit" id="bt_send_message" value="send_message">Submit</button>
+                            <hr class="my-4"> 
+                            <small class="text-muted">Someone will get back to you soon.</small>
+                        </form>
                     </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
-            </div> 
+                    
+                </div>
+            </div>
         </div> 
         <div class="text-white row bg-dark">
         
